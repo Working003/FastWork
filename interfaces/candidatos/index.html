@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FASTWORK - Candidatos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-secondary-subtle">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-primary sidebar collapse">
+                <div class="position-sticky pt-3">
+                    <div class="text-center mb-4">
+                        <img src="https://via.placeholder.com/80x80" alt="User" class="rounded-circle img-thumbnail">
+                        <h5 class="mt-2 text-white">Maria Oliveira</h5>
+                        <p class="text-white-50">Demandante</p>
+                    </div>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../dashboard/index.html">
+                                <i class="bi bi-speedometer2 me-2"></i> Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../trabalhos-disponiveis/index.html">
+                                <i class="bi bi-briefcase me-2"></i> Trabalhos Disponíveis
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">
+                                <i class="bi bi-people me-2"></i> Candidatos
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../publicar-trabalho/index.html">
+                                <i class="bi bi-plus-circle me-2"></i> Publicar Trabalho
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="bi bi-chat-left-text me-2"></i> Mensagens
+                            </a>
+                        </li>
+                        <li class="nav-item mt-3">
+                            <a class="nav-link text-danger" href="../../index.html">
+                                <i class="bi bi-box-arrow-left me-2"></i> Sair
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Main Content -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Candidatos Disponíveis</h1>
+                    <div class="btn-toolbar mb-2 mb-md-0">
+                        <div class="btn-group me-2">
+                            <button type="button" class="btn btn-sm btn-outline-secondary">Filtrar</button>
+                            <button type="button" class="btn btn-sm btn-outline-secondary">Ordenar</button>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" class="form-control form-control-sm" placeholder="Buscar candidatos...">
+                            <button class="btn btn-sm btn-outline-secondary" type="button">
+                                <i class="bi bi-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="alert alert-info">
+                    <i class="bi bi-info-circle-fill me-2"></i> Você tem 3 candidatos para a vaga "Limpeza Residencial"
+                </div>
+
+                <div class="card mb-4">
+                    <div class="card-header bg-primary text-white">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h5 class="mb-0">Candidatos para "Limpeza Residencial"</h5>
+                            <span class="badge bg-light text-dark">3 candidatos</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle">
+                                <thead>
+                                    <tr>
+                                        <th>Candidato</th>
+                                        <th>Experiência</th>
+                                        <th>Valor Proposto</th>
+                                        <th>Avaliação</th>
+                                        <th>Ações</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <img src="https://via.placeholder.com/40x40" alt="Avatar" class="rounded-circle me-3">
+                                                <div>
+                                                    <h6 class="mb-0">João Silva</h6>
+                                                    <small class="text-muted">São Paulo - SP</small>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span class="badge bg-primary-subtle text-primary">2 anos</span>
+                                            <small class="d-block text-muted">10 trabalhos concluídos</small>
+                                        </td>
+                                        <td>R$ 120,00</td>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <div class="me-2">
+                                                    <i class="bi bi-star-fill text-warning"></i>
+                                                    <i class="bi bi-star-fill text-warning"></i>
+                                                    <i class="bi bi-star-fill text-warning"></i>
+                                                    <i class="bi bi-star-fill text-warning"></i>
+                                                    <i class="bi bi-star-half text-warning"></i>
+                                                </div>
+                                                <span>4.7</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex gap-2">
+                                                <button class="btn btn-sm btn-success" data-bs-toggle="modal" data-bs-target="#approveModal">
+                                                    <i class="bi bi-check-lg"></i> Aceitar
+                                                </button>
+                                                <button class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#rejectModal">
+                                                    <i class="bi bi-x-lg"></i> Recusar
+                                                </button>
+                                                <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#messageModal">
+                                                    <i class="bi bi-chat-left-text"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <img src="https://via.placeholder.com/40x40" alt="Avatar" class="rounded-circle me-3">
+                                                <div>
+                                                    <h6 class="mb-0">Ana Santos</h6>
+                                                    <small class="text-muted">São Paulo - SP</small>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span class="badge bg-primary-subtle text-primary">6 meses</span>
+                                            <small class="d-block text-muted">3 trabalhos concluídos</small>
+                                        </td>
+                                        <td>R$ 100,00</td>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <div class="me-2">
+                                                    <i class="bi bi-star-fill text-warning"></i>
+                                                    <i class="bi bi-star-fill text-warning"></i>
+                                                    <i class="bi bi-star-fill text-warning"></i>
+                                                    <i class="bi bi-star-fill text-warning"></i>
+                                                    <i class="bi bi-star text-warning"></i>
+                                                </div>
+                                                <span>4.0</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex gap-2">
+                                                <button class="btn btn-sm btn-success">
+                                                    <i class="bi bi-check-lg"></i> Aceitar
+                                                </button>
+                                                <button class="btn btn-sm btn-danger">
+                                                    <i class="bi bi-x-lg"></i> Recusar
+                                                </button>
+                                                <button class="btn btn-sm btn-primary">
+                                                    <i class="bi bi-chat-left-text"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <img src="https://via.placeholder.com/40x40" alt="Avatar" class="rounded-circle me-3">
+                                                <div>
+                                                    <h6 class="mb-0">Carlos Oliveira</h6>
+                                                    <small class="text-muted">São Paulo - SP</small>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span class="badge bg-primary-subtle text-primary">1 ano</span>
+                                            <small class="d-block text-muted">5 trabalhos concluídos</small>
+                                        </td>
+                                        <td>R$ 150,00</td>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <div class="me-2">
+                                                    <i class="bi bi-star-fill text-warning"></i>
+                                                    <i class="bi bi-star-fill text-warning"></i>
+                                                    <i class="bi bi-star-fill text-warning"></i>
+                                                    <i class="bi bi-star-fill text-warning"></i>
+                                                    <i class="bi bi-star-fill text-warning"></i>
+                                                </div>
+                                                <span>5.0</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex gap-2">
+                                                <button class="btn btn-sm btn-success">
+                                                    <i class="bi bi-check-lg"></i> Aceitar
+                                                </button>
+                                                <button class="btn btn-sm btn-danger">
+                                                    <i class="bi bi-x-lg"></i> Recusar
+                                                </button>
+                                                <button class="btn btn-sm btn-primary">
+                                                    <i class="bi bi-chat-left-text"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">Histórico de Candidaturas</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="list-group">
+                            <a href="#" class="list-group-item list-group-item-action">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h6 class="mb-1">Organização de Evento</h6>
+                                    <small class="text-success">Aprovado</small>
+                                </div>
+                                <p class="mb-1">Candidato: João Silva - Valor: R$ 220,00</p>
+                                <small class="text-muted">Aprovado em 10/06/2023</small>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h6 class="mb-1">Jardinagem Básica</h6>
+                                    <small class="text-danger">Recusado</small>
+                                </div>
+                                <p class="mb-1">Candidato: Maria Santos - Valor: R$ 200,00</p>
+                                <small class="text-muted">Recusado em 05/06/2023</small>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Approve Modal -->
+    <div class="modal fade" id="approveModal" tabindex="-1" aria-labelledby="approveModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title" id="approveModalLabel">Aprovar Candidato</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Tem certeza que deseja aprovar <strong>João Silva</strong> para o trabalho <strong>"Limpeza Residencial"</strong>?</p>
+                    <div class="mb-3">
+                        <label for="approveMessage" class="form-label">Mensagem (opcional)</label>
+                        <textarea class="form-control" id="approveMessage" rows="3" placeholder="Informações adicionais..."></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-success">Confirmar Aprovação</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reject Modal -->
+    <div class="modal fade" id="rejectModal" tabindex="-1" aria-labelledby="rejectModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title" id="rejectModalLabel">Recusar Candidato</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Tem certeza que deseja recusar <strong>João Silva</strong> para o trabalho <strong>"Limpeza Residencial"</strong>?</p>
+                    <div class="mb-3">
+                        <label for="rejectReason" class="form-label">Motivo (opcional)</label>
+                        <select class="form-select" id="rejectReason">
+                            <option selected>Selecione um motivo</option>
+                            <option>Valor muito alto</option>
+                            <option>Experiência insuficiente</option>
+                            <option>Outros candidatos mais qualificados</option>
+                            <option>Outro motivo</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="rejectMessage" class="form-label">Mensagem (opcional)</label>
+                        <textarea class="form-control" id="rejectMessage" rows="3" placeholder="Feedback construtivo..."></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-danger">Confirmar Recusa</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Message Modal -->
+    <div class="modal fade" id="messageModal" tabindex="-1" aria-labelledby="messageModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="messageModalLabel">Enviar Mensagem</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="messageSubject" class="form-label">Assunto</label>
+                        <input type="text" class="form-control" id="messageSubject" value="Trabalho: Limpeza Residencial">
+                    </div>
+                    <div class="mb-3">
+                        <label for="messageContent" class="form-label">Mensagem</label>
+                        <textarea class="form-control" id="messageContent" rows="5" placeholder="Escreva sua mensagem..."></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary">Enviar Mensagem</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

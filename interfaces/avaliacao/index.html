@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FASTWORK - Avaliação</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-secondary-subtle">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card shadow-lg my-5">
+                    <div class="card-header bg-primary text-white">
+                        <h2 class="text-center">Avaliação do Serviço</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="text-center mb-4">
+                            <h4>Limpeza Residencial</h4>
+                            <p class="text-muted">Realizado por: João Silva</p>
+                            <p>Data: 15/06/2023</p>
+                        </div>
+
+                        <form id="evaluationForm">
+                            <div class="mb-4 text-center">
+                                <h5 class="mb-3">Como você avalia o serviço prestado?</h5>
+                                <div class="rating">
+                                    <input type="radio" id="star5" name="rating" value="5">
+                                    <label for="star5" class="bi bi-star-fill fs-1"></label>
+                                    <input type="radio" id="star4" name="rating" value="4">
+                                    <label for="star4" class="bi bi-star-fill fs-1"></label>
+                                    <input type="radio" id="star3" name="rating" value="3">
+                                    <label for="star3" class="bi bi-star-fill fs-1"></label>
+                                    <input type="radio" id="star2" name="rating" value="2">
+                                    <label for="star2" class="bi bi-star-fill fs-1"></label>
+                                    <input type="radio" id="star1" name="rating" value="1">
+                                    <label for="star1" class="bi bi-star-fill fs-1"></label>
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="evaluationComment" class="form-label">Deixe um comentário (opcional)</label>
+                                <textarea class="form-control" id="evaluationComment" rows="4" placeholder="Descreva sua experiência com o serviço..."></textarea>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="form-label">Pontos fortes (marque os que se aplicam)</label>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="quality">
+                                            <label class="form-check-label" for="quality">Qualidade do serviço</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="punctuality">
+                                            <label class="form-check-label" for="punctuality">Pontualidade</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="communication">
+                                            <label class="form-check-label" for="communication">Boa comunicação</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="professionalism">
+                                            <label class="form-check-label" for="professionalism">Profissionalismo</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="cleaning">
+                                            <label class="form-check-label" for="cleaning">Limpeza adequada</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="recommend">
+                                            <label class="form-check-label" for="recommend">Recomendaria</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="improvement" class="form-label">Sugestões de melhoria (opcional)</label>
+                                <textarea class="form-control" id="improvement" rows="3" placeholder="O que poderia ser melhorado..."></textarea>
+                            </div>
+
+                            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                <button type="button" class="btn btn-secondary me-md-2" onclick="redirecionar()">Avaliar Depois</button>
+                                <button type="button" class="btn btn-primary" onclick="redirecionar()">Entrar</button>
+                                <script>
+                                function redirecionar() {
+                                  window.location.href = "../dashboard/index.html";
+                                }
+                                </script>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .rating {
+            display: inline-block;
+            direction: rtl;
+        }
+        .rating input {
+            display: none;
+        }
+        .rating label {
+            color: #ddd;
+            cursor: pointer;
+        }
+        .rating input:checked ~ label,
+        .rating label:hover,
+        .rating label:hover ~ label {
+            color: #ffc107;
+        }
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
