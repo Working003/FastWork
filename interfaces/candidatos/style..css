@@ -1,4 +1,3 @@
-/* candidatos/style.css - Versão Aprimorada */
 :root {
     --primary-color: #3a56a7;
     --primary-dark: #2c4285;
@@ -12,31 +11,71 @@
 body {
     background-color: var(--secondary-subtle);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-top: 56px; /* Espaço para o navbar fixo */
 }
 
-/* Sidebar melhorada */
-#sidebar {
-    min-height: 100vh;
-    background-color: var(--primary-color);
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+/* Navbar */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: var(--primary-color) !important;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand img {
+    margin-right: 8px;
 }
 
 .nav-link {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
     color: white;
-    border-radius: 5px;
-    margin-bottom: 5px;
     transition: all 0.3s ease;
-    padding: 10px 15px;
 }
 
-.nav-link:hover, .nav-link.active {
-    background-color: rgba(255, 255, 255, 0.15);
-    color: white;
-    transform: translateX(5px);
+.nav-link i {
+    margin-right: 5px;
 }
 
-.nav-link.text-danger:hover {
-    background-color: rgba(220, 53, 69, 0.2);
+.navbar-nav .nav-item .nav-link {
+    border-radius: 4px;
+    margin: 0 2px;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.navbar-nav .nav-item .nav-link.active {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+    border: none;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-item {
+    padding: 8px 16px;
+}
+
+.dropdown-item i {
+    width: 20px;
+    text-align: center;
+}
+
+.dropdown-item.text-danger {
+    color: var(--danger-color) !important;
+}
+
+.dropdown-item.text-danger:hover {
+    background-color: rgba(220, 53, 69, 0.1);
 }
 
 /* Header estilizado */
@@ -77,32 +116,6 @@ body {
 
 .table-hover tbody tr:hover {
     background-color: rgba(58, 86, 167, 0.1);
-    transform: translateX(5px);
-}
-
-/* Componentes específicos da tela de candidatos */
-.candidate-card {
-    border-radius: 10px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-.candidate-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-.avatar-img {
-    width: 40px;
-    height: 40px;
-    object-fit: cover;
-    border: 2px solid var(--primary-subtle);
-}
-
-.rating-stars {
-    color: var(--warning-color);
-    font-size: 0.9rem;
 }
 
 /* Modais especializadas */
@@ -114,48 +127,7 @@ body {
     background-color: var(--danger-color) !important;
 }
 
-/* Lista de histórico */
-.history-item {
-    transition: all 0.3s ease;
-    border-left: 3px solid transparent;
-}
-
-.history-item:hover {
-    background-color: var(--primary-subtle);
-    border-left-color: var(--primary-color);
-}
-
-.history-item.approved {
-    border-left-color: var(--success-color);
-}
-
-.history-item.rejected {
-    border-left-color: var(--danger-color);
-}
-
-/* Badges modernas */
-.status-badge {
-    font-size: 0.75rem;
-    padding: 0.35em 0.65em;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-}
-
-/* Efeitos de loading (adicionado) */
-.loading-spinner {
-    display: none;
-    color: var(--primary-color);
-}
-
-.is-loading .loading-spinner {
-    display: inline-block;
-}
-
-.is-loading .btn-text {
-    display: none;
-}
-
-/* Responsividade aprimorada (adicionado) */
+/* Responsividade */
 @media (max-width: 768px) {
     .candidate-actions {
         flex-direction: column;
@@ -169,9 +141,14 @@ body {
     .avatar-container {
         margin-bottom: 10px;
     }
+    
+    .table-responsive {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
 }
 
-/* Animações (adicionado) */
+/* Animações */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
@@ -179,31 +156,4 @@ body {
 
 .candidate-row {
     animation: fadeIn 0.5s ease forwards;
-}
-
-/* Estilos para o filtro (adicionado) */
-.filter-container {
-    background-color: white;
-    border-radius: 8px;
-    padding: 15px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-}
-
-.filter-header {
-    border-bottom: 1px solid var(--primary-subtle);
-    padding-bottom: 10px;
-    margin-bottom: 15px;
-}
-
-/* Mensagem de empty state (adicionado) */
-.empty-state {
-    text-align: center;
-    padding: 40px 20px;
-    color: #6c757d;
-}
-
-.empty-state-icon {
-    font-size: 3rem;
-    color: var(--primary-subtle);
-    margin-bottom: 15px;
 }
