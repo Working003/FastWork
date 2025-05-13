@@ -1,53 +1,62 @@
 body {
     background-color: #f8f9fa;
+    padding-top: 56px; /* Espaço para o navbar fixo */
 }
 
-/* Sidebar */
-#sidebar {
-    min-height: 100vh;
-    background-color: #3a56a7;
+/* Navbar */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-weight: bold;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding-bottom: 20px;
+    align-items: center;
 }
 
-/* Links da sidebar */
+.navbar-brand img {
+    margin-right: 8px;
+}
+
 .nav-link {
-    color: white; /* Texto branco */
-    text-align: center; /* Centralizar o texto */
-    font-weight: bold; /* Deixar o texto mais destacado */
-    padding: 20px 0; /* Espaçamento vertical maior */
-    display: block; /* Garantir que ocupe toda a largura */
-    text-decoration: none; /* Remover sublinhado */
-    border-top: 1px solid black; /* Linha preta acima */
-    border-bottom: 1px solid black; /* Linha preta abaixo */
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
 }
 
-.nav-link:hover, .nav-link.active {
-    color: #e2eafc; /* Cor ao passar o mouse ou quando ativo */
-    background-color: transparent; /* Sem fundo */
+.nav-link i {
+    margin-right: 5px;
 }
 
-.nav-link.text-danger {
-    color: #f8d7da; /* Cor do botão "Sair" */
+.navbar-nav .nav-item .nav-link {
+    border-radius: 4px;
+    margin: 0 2px;
 }
 
-.nav-link.text-danger:hover {
-    color: #f5c6cb; /* Cor ao passar o mouse no botão "Sair" */
+.navbar-nav .nav-item .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Botão "Sair" */
-.nav-item.mt-3 {
-    margin-top: auto; /* Empurra o botão para o final da sidebar */
-    text-align: center; /* Centraliza o texto */
-    padding-top: 30px; /* Distância maior do último botão */
+.navbar-nav .nav-item .nav-link.active {
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
-.nav-item.mt-3 .nav-link {
-    border: none; /* Sem linhas pretas para o botão "Sair" */
+/* Dropdown menu */
+.dropdown-menu {
+    border: none;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
+.dropdown-item {
+    padding: 8px 16px;
+}
+
+.dropdown-item i {
+    width: 20px;
+    text-align: center;
+}
+
+/* Cards e outros elementos */
 .card-header {
     background-color: #3a56a7;
     color: white;
@@ -77,4 +86,19 @@ body {
 
 .badge.bg-primary {
     background-color: #3a56a7 !important;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+    .navbar-collapse {
+        padding-top: 10px;
+    }
+    
+    .navbar-nav {
+        margin-top: 10px;
+    }
+    
+    .nav-link {
+        padding: 8px 0;
+    }
 }
