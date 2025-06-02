@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FASTWORK - Quero Trabalhar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-secondary-subtle">
+    <!-- Navbar Principal -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="https://via.placeholder.com/40x40" alt="Logo" class="rounded-circle me-2">
+                FASTWORK
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../dashboard/index.html">
+                            <i class="bi bi-speedometer2 me-1"></i> Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../trabalhos-disponiveis/index.html">
+                            <i class="bi bi-briefcase me-1"></i> Trabalhos Disponíveis
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">
+                            <i class="bi bi-person-lines-fill me-1"></i> Quero Trabalhar
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../candidatos/index.html">
+                            <i class="bi bi-people me-1"></i> Candidatos
+                        </a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                            <img src="https://via.placeholder.com/30x30" alt="User" class="rounded-circle me-1">
+                            João Silva
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#"><i class="bi bi-person me-2"></i> Perfil</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="bi bi-chat-left-text me-2"></i> Mensagens</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="bi bi-star me-2"></i> Avaliações</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="bi bi-gear me-2"></i> Configurações</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item text-danger" href="../../index.html"><i class="bi bi-box-arrow-left me-2"></i> Sair</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Segundo Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-white border-bottom" style="margin-top: 56px;">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="secondaryNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#" id="perfil-tab">
+                            <i class="bi bi-person-badge me-1"></i> Meu Perfil de Trabalho
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="disponiveis-tab">
+                            <i class="bi bi-briefcase me-1"></i> Trabalhos Disponíveis
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="meus-trabalhos-tab">
+                            <i class="bi bi-list-task me-1"></i> Meus Trabalhos
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container-fluid mt-3">
+        <div class="row">
+            <main class="col-12 px-md-4">
+                <!-- Conteúdo Dinâmico -->
+                <div id="perfil-content" class="content-section">
+                    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                        <h1 class="h2">Meu perfil de trabalho</h1>
+                    </div>
+                    <!-- Da para usar
+                    <div class="card shadow-sm mb-4">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="mb-0">Informações Pessoais</h5>
+                        </div>
+                        <div class="card-body">    Usar dps
+                            <div class="row">
+                                <div class="col-md-3 text-center">
+                                    <img src="https://via.placeholder.com/150x150" alt="Foto de Perfil" class="rounded-circle mb-3 img-thumbnail">
+                                    <button class="btn btn-sm btn-outline-primary w-100">Alterar Foto</button>
+                                </div>
+                                <div class="col-md-9">
+                                    <form>
+                                        <div class="row mb-3">
+                                            <div class="col-md-6">
+                                                <label class="form-label">Nome Completo</label>
+                                                <input type="text" class="form-control" value="João Silva">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="form-label">CPF</label>
+                                                <input type="text" class="form-control" value="123.456.789-00">
+                                            </div>
+                                        </div>
+                                        <div class="row mb-3">
+                                            <div class="col-md-6">
+                                                <label class="form-label">Telefone</label>
+                                                <input type="text" class="form-control" value="(11) 98765-4321">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="form-label">E-mail</label>
+                                                <input type="email" class="form-control" value="joao.silva@email.com">
+                                            </div>
+                                        </div>
+                                        <div class="row mb-3">
+                                            <div class="col-md-6">
+                                                <label class="form-label">Data de Nascimento</label>
+                                                <input type="date" class="form-control" value="1985-05-15">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="form-label">Gênero</label>
+                                                <select class="form-select">
+                                                    <option>Masculino</option>
+                                                    <option>Feminino</option>
+                                                    <option>Outro</option>
+                                                    <option>Prefiro não informar</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>-->
+                    
+                    <div class="card shadow-sm mb-4">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="mb-0">Informações Profissionais</h5>
+                        </div>
+                        <div class="card-body">
+                            <form>
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label">Área de Atuação</label>
+                                        <select class="form-select">
+                                            <option>Limpeza Residencial</option>
+                                            <option>Limpeza Comercial</option>
+                                            <option>Jardinagem</option>
+                                            <option>Reparos Domésticos</option>
+                                            <option>Montagem de Móveis</option>
+                                            <option>Outros</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Pronto para trabalhar?</label>
+                                        <select class="form-select">
+                                            <option>Sim</option>
+                                            <option>Não</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Descrição do seu trabalho</label>
+                                    <textarea class="form-control" rows="3">Profissional com 5 anos de experiência em serviços de limpeza residencial e comercial. Trabalho com dedicação e atenção aos detalhes, garantindo a satisfação dos clientes.</textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Habilidades</label>
+                                    <input type="text" class="form-control" value="Limpeza profunda, Organização, Produtos de limpeza">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="disponiveis-content" class="content-section d-none">
+                    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                        <h1 class="h2">Trabalhos Disponíveis</h1>
+                        <div class="btn-toolbar mb-2 mb-md-0">
+                            <div class="input-group">
+                                <input type="text" class="form-control form-control-sm" placeholder="Buscar trabalhos...">
+                                <button class="btn btn-sm btn-outline-secondary" type="button">
+                                    <i class="bi bi-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row row-cols-1 row-cols-md-2 g-4">
+                        <!-- Trabalho 1 -->
+                        <div class="col">
+                            <div class="card h-100 shadow-sm">
+                                <div class="card-header bg-primary text-white">
+                                    <h5 class="mb-0">Limpeza Residencial</h5>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="list-group list-group-flush mb-3">
+                                        <li class="list-group-item">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <strong>Cliente:</strong>
+                                                </div>
+                                                <div class="d-flex align-items-center">
+                                                    <img src="https://via.placeholder.com/40x40" alt="Avatar" class="rounded-circle me-3">
+                                                    <div>
+                                                        <h6 class="mb-0">Maria Oliveira</h6>
+                                                        <small class="text-muted">São Paulo - SP</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item"><strong>Valor:</strong> R$ 120,00</li>
+                                        <li class="list-group-item"><strong>Prazo:</strong> 15/06/2023</li>
+                                        <li class="list-group-item"><strong>Descrição:</strong> Limpeza completa de apartamento de 60m² no bairro Jardins.</li>
+                                    </ul>
+                                </div>
+                                <div class="card-footer bg-primary-subtle">
+                                    <div class="d-flex justify-content-between">
+                                        <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#detailsModal">
+                                            <i class="bi bi-eye me-1"></i> Detalhes
+                                        </button>
+                                        <button class="btn btn-sm btn-success">
+                                            <i class="bi bi-check-circle me-1"></i> Candidatar-se
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Trabalho 2 -->
+                        <div class="col">
+                            <div class="card h-100 shadow-sm">
+                                <div class="card-header bg-primary text-white">
+                                    <h5 class="mb-0">Organização de Evento</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-3">
+                                        <h6 class="text-muted">Cliente</h6>
+                                        <div class="d-flex align-items-center">
+                                            <img src="https://via.placeholder.com/40x40" alt="Avatar" class="rounded-circle me-3">
+                                            <div>
+                                                <h6 class="mb-0">Carlos Souza</h6>
+                                                <small class="text-muted">Rio de Janeiro - RJ</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-6">
+                                            <h6 class="text-muted">Valor</h6>
+                                            <p>R$ 250,00</p>
+                                        </div>
+                                        <div class="col-6">
+                                            <h6 class="text-muted">Prazo</h6>
+                                            <p>20/06/2023</p>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <h6 class="text-muted">Descrição</h6>
+                                        <p>Ajuda na organização de evento corporativo para 50 pessoas, incluindo montagem de mesas, decoração e apoio geral.</p>
+                                    </div>
+                                </div>
+                                <div class="card-footer bg-primary-subtle">
+                                    <div class="d-flex justify-content-between">
+                                        <button class="btn btn-sm btn-primary">
+                                            <i class="bi bi-eye me-1"></i> Detalhes
+                                        </button>
+                                        <button class="btn btn-sm btn-success">
+                                            <i class="bi bi-check-circle me-1"></i> Candidatar-se
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="meus-trabalhos-content" class="content-section d-none">
+                    <!-- Conteúdo de Meus Trabalhos (copiado do arquivo original) -->
+                    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                        <h1 class="h2">Meus Trabalhos</h1>
+                        <div class="btn-toolbar mb-2 mb-md-0">
+                            <div class="btn-group me-2">
+                                <button type="button" class="btn btn-sm btn-outline-secondary">Filtrar</button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary">Ordenar</button>
+                            </div>
+                            <div class="input-group">
+                                <input type="text" class="form-control form-control-sm" placeholder="Buscar trabalhos...">
+                                <button class="btn btn-sm btn-outline-secondary" type="button">
+                                    <i class="bi bi-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Abas de status -->
+                    <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="completed-tab" data-bs-toggle="tab" data-bs-target="#completed" type="button" role="tab">
+                                Concluídos <span class="badge bg-success ms-1">5</span>
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="active-tab" data-bs-toggle="tab" data-bs-target="#active" type="button" role="tab">
+                                Em Andamento <span class="badge bg-primary ms-1">2</span>
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="pending-tab" data-bs-toggle="tab" data-bs-target="#pending" type="button" role="tab">
+                                Pendentes <span class="badge bg-warning ms-1">1</span>
+                            </button>
+                        </li>
+                    </ul>
+
+                    <!-- Conteúdo das abas -->
+                    <div class="tab-content" id="myTabContent">
+                        <!-- Tab Em Andamento -->
+                        <div class="tab-pane fade show active" id="active" role="tabpanel">
+                            <div class="row row-cols-1 row-cols-md-2 g-4">
+                                <!-- Trabalho 1 -->
+                                <div class="col">
+                                    <div class="card h-100 shadow-sm">
+                                        <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                                            <h5 class="mb-0">Limpeza Residencial</h5>
+                                            <span class="badge bg-light text-dark">Em Andamento</span>
+                                        </div>
+                                        <div class="card-body">
+                                            <ul class="list-group list-group-flush mb-3">
+                                                <!-- Item do Cliente (alinhado com os demais) -->
+                                                <li class="list-group-item">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <div>
+                                                            <strong>Cliente:</strong>
+                                                        </div>
+                                                        <div class="d-flex align-items-center">
+                                                            <img src="https://via.placeholder.com/40x40" alt="Avatar" class="rounded-circle me-3">
+                                                            <div>
+                                                                <h6 class="mb-0">Maria Oliveira</h6>
+                                                                <small class="text-muted">São Paulo - SP</small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <!-- Demais itens -->
+                                                <li class="list-group-item"><strong>Valor:</strong> R$ 120,00</li>
+                                                <li class="list-group-item"><strong>Prazo:</strong> 15/06/2023</li>
+                                            </ul>
+                                        </div>
+                                        <div class="card-footer bg-primary-subtle">
+                                            <div class="d-flex justify-content-between">
+                                                <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#detailsModal">
+                                                    <i class="bi bi-eye me-1"></i> Detalhes
+                                                </button>
+                                                <button class="btn btn-sm btn-success">
+                                                    <i class="bi bi-check-circle me-1"></i> Finalizar
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Trabalho 2 -->
+                                <div class="col">
+                                    <div class="card h-100 shadow-sm">
+                                        <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                                            <h5 class="mb-0">Organização de Evento</h5>
+                                            <span class="badge bg-light text-dark">Em Andamento</span>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="mb-3">
+                                                <h6 class="text-muted">Cliente</h6>
+                                                <div class="d-flex align-items-center">
+                                                    <img src="https://via.placeholder.com/40x40" alt="Avatar" class="rounded-circle me-3">
+                                                    <div>
+                                                        <h6 class="mb-0">Carlos Souza</h6>
+                                                        <small class="text-muted">Rio de Janeiro - RJ</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-3">
+                                                <div class="col-6">
+                                                    <h6 class="text-muted">Valor</h6>
+                                                    <p>R$ 250,00</p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <h6 class="text-muted">Prazo</h6>
+                                                    <p>20/06/2023</p>
+                                                </div>
+                                            </div>
+                                            <div class="progress mb-3">
+                                                <div class="progress-bar bg-success" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer bg-primary-subtle">
+                                            <div class="d-flex justify-content-between">
+                                                <button class="btn btn-sm btn-primary">
+                                                    <i class="bi bi-eye me-1"></i> Detalhes
+                                                </button>
+                                                <button class="btn btn-sm btn-success">
+                                                    <i class="bi bi-check-circle me-1"></i> Finalizar
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tab Concluídos -->
+                        <div class="tab-pane fade" id="completed" role="tabpanel">
+                            <div class="table-responsive">
+                                <table class="table table-hover align-middle">
+                                    <thead>
+                                        <tr>
+                                            <th>Trabalho</th>
+                                            <th>Cliente</th>
+                                            <th>Valor</th>
+                                            <th>Data Conclusão</th>
+                                            <th>Avaliação</th>
+                                            <th>Ações</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Jardinagem Básica</td>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <img src="https://via.placeholder.com/40x40" alt="Avatar" class="rounded-circle me-2" width="30">
+                                                    Ana Santos
+                                                </div>
+                                            </td>
+                                            <td>R$ 180,00</td>
+                                            <td>10/06/2023</td>
+                                            <td>
+                                                <div class="rating-stars">
+                                                    <i class="bi bi-star-fill"></i>
+                                                    <i class="bi bi-star-fill"></i>
+                                                    <i class="bi bi-star-fill"></i>
+                                                    <i class="bi bi-star-fill"></i>
+                                                    <i class="bi bi-star-half"></i>
+                                                    <span class="ms-1">4.5</span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <button class="btn btn-sm btn-primary">
+                                                    <i class="bi bi-eye"></i> Ver
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <!-- Mais linhas de trabalhos concluídos... -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Tab Pendentes -->
+                        <div class="tab-pane fade" id="pending" role="tabpanel">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <div>
+                                            <h5 class="mb-0">Serviço de Mudança</h5>
+                                            <small class="text-muted">Aguardando confirmação do cliente</small>
+                                        </div>
+                                        <span class="badge bg-warning">Pendente</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <h6 class="text-muted">Cliente</h6>
+                                            <p>Roberto Almeida</p>
+                                        </div>
+                                        <div>
+                                            <h6 class="text-muted">Valor Proposto</h6>
+                                            <p>R$ 200,00</p>
+                                        </div>
+                                        <div>
+                                            <h6 class="text-muted">Data Prevista</h6>
+                                            <p>22/06/2023</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer bg-primary-subtle">
+                                    <button class="btn btn-sm btn-outline-secondary me-2">
+                                        <i class="bi bi-pencil"></i> Editar Proposta
+                                    </button>
+                                    <button class="btn btn-sm btn-outline-danger">
+                                        <i class="bi bi-x-circle"></i> Cancelar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Modal de Detalhes (copiado do arquivo original) -->
+    <div class="modal fade" id="detailsModal" tabindex="-1" aria-labelledby="detailsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="detailsModalLabel">Detalhes do Trabalho</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <h5>Limpeza Residencial</h5>
+                            <p class="text-muted">Limpeza completa de apartamento de 60m² no bairro Jardins</p>
+                        </div>
+                        <div class="col-md-6 text-end">
+                            <span class="badge bg-primary">Em Andamento</span>
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <h6 class="text-muted">Cliente</h6>
+                            <div class="d-flex align-items-center">
+                                <img src="https://via.placeholder.com/50x50" alt="Avatar" class="rounded-circle me-3">
+                                <div>
+                                    <h6 class="mb-0">Maria Oliveira</h6>
+                                    <small class="text-muted">São Paulo - SP</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h6 class="text-muted">Contato</h6>
+                            <p><i class="bi bi-telephone me-2"></i> (11) 98765-4321</p>
+                            <p><i class="bi bi-envelope me-2"></i> maria.oliveira@email.com</p>
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <div class="col-md-4">
+                            <h6 class="text-muted">Valor</h6>
+                            <p>R$ 120,00</p>
+                        </div>
+                        <div class="col-md-4">
+                            <h6 class="text-muted">Data Início</h6>
+                            <p>10/06/2023</p>
+                        </div>
+                        <div class="col-md-4">
+                            <h6 class="text-muted">Prazo Final</h6>
+                            <p>15/06/2023</p>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <h6 class="text-muted">Descrição</h6>
+                        <p>Limpeza completa de apartamento de 60m² no bairro Jardins. Inclui limpeza de banheiros, cozinha, salas e quartos. Materiais de limpeza serão fornecidos pelo cliente.</p>
+                    </div>
+
+                    <div class="mb-4">
+                        <h6 class="text-muted">Progresso</h6>
+                        <div class="progress mb-3" style="height: 20px;">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">65%</div>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <h6 class="text-muted">Atualizações</h6>
+                        <div class="list-group">
+                            <div class="list-group-item">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h6 class="mb-1">Início do trabalho</h6>
+                                    <small>10/06/2023</small>
+                                </div>
+                                <p class="mb-1">Iniciada a limpeza da área social</p>
+                            </div>
+                            <div class="list-group-item">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h6 class="mb-1">Primeira etapa concluída</h6>
+                                    <small>12/06/2023</small>
+                                </div>
+                                <p class="mb-1">Área social e cozinha finalizadas</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary">Enviar Atualização</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Script para alternar entre as seções
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mostrar a seção Meus Trabalhos por padrão
+            document.getElementById('perfil-content').classList.remove('d-none');
+            
+            // Adicionar eventos aos links do segundo navbar
+            document.getElementById('perfil-tab').addEventListener('click', function(e) {
+                e.preventDefault();
+                hideAllSections();
+                document.getElementById('perfil-content').classList.remove('d-none');
+                setActiveTab(this);
+            });
+            
+            document.getElementById('disponiveis-tab').addEventListener('click', function(e) {
+                e.preventDefault();
+                hideAllSections();
+                document.getElementById('disponiveis-content').classList.remove('d-none');
+                setActiveTab(this);
+            });
+            
+            document.getElementById('meus-trabalhos-tab').addEventListener('click', function(e) {
+                e.preventDefault();
+                hideAllSections();
+                document.getElementById('meus-trabalhos-content').classList.remove('d-none');
+                setActiveTab(this);
+            });
+            
+            function hideAllSections() {
+                document.querySelectorAll('.content-section').forEach(section => {
+                    section.classList.add('d-none');
+                });
+            }
+            
+            function setActiveTab(activeElement) {
+                document.querySelectorAll('#secondaryNavbar .nav-link').forEach(tab => {
+                    tab.classList.remove('active');
+                });
+                activeElement.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>
