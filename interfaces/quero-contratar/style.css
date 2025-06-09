@@ -155,3 +155,68 @@ body {
 .card:hover {
     transform: translateY(-2px);
 }
+
+/* Estilos adicionais para os filtros */
+        .filtro-grupo {
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 1rem;
+        }
+        
+        .filtro-grupo:last-child {
+            border-bottom: none;
+        }
+        
+        .filtro-titulo {
+            font-weight: 600;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .filtro-titulo:hover {
+            background-color: rgba(58, 86, 167, 0.1);
+        }
+        
+        .filtro-opcoes {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding-left: 1rem;
+        }
+        
+        .filtro-grupo:hover .filtro-opcoes {
+            max-height: 500px;
+        }
+        
+        .filtro-opcao {
+            margin: 0.5rem 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .filtro-opcao label {
+            margin-left: 0.5rem;
+            cursor: pointer;
+        }
+        
+        .perfil-card {
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .perfil-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .perfil-avaliacao {
+            color: #ffc107;
+        }
+        
+        .perfil-valor {
+            font-weight: bold;
+            color: #198754;
+        }
