@@ -7,78 +7,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* Estilos adicionais para os filtros */
-        .filtro-grupo {
-            margin-bottom: 1.5rem;
-            border-bottom: 1px solid #dee2e6;
-            padding-bottom: 1rem;
-        }
-        
-        .filtro-grupo:last-child {
-            border-bottom: none;
-        }
-        
-        .filtro-titulo {
-            font-weight: 600;
-            cursor: pointer;
-            padding: 0.5rem;
-            border-radius: 4px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .filtro-titulo:hover {
-            background-color: rgba(58, 86, 167, 0.1);
-        }
-        
-        .filtro-opcoes {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-            padding-left: 1rem;
-        }
-        
-        .filtro-grupo:hover .filtro-opcoes {
-            max-height: 500px;
-        }
-        
-        .filtro-opcao {
-            margin: 0.5rem 0;
-            display: flex;
-            align-items: center;
-        }
-        
-        .filtro-opcao label {
-            margin-left: 0.5rem;
-            cursor: pointer;
-        }
-        
-        .perfil-card {
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        
-        .perfil-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-        
-        .perfil-avaliacao {
-            color: #ffc107;
-        }
-        
-        .perfil-valor {
-            font-weight: bold;
-            color: #198754;
-        }
-    </style>
 </head>
-<body class="bg-secondary-subtle">
+<body class="bg-light">
     <!-- Navbar Principal -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">
                 <i class="bi bi-briefcase-fill fs-3 text-white me-2"></i>
                 FASTWORK
             </a>
@@ -87,11 +21,6 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="../dashboard/index.html">
-                            <i class="bi bi-speedometer2 me-1"></i> Dashboard
-                        </a>
-                    </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="../quero-contratar/index.html">
                             <i class="bi bi-briefcase me-1"></i> Quero Contratar
@@ -105,11 +34,11 @@
                 </ul>
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
                             <img src="https://via.placeholder.com/30x30" alt="User" class="rounded-circle me-1">
                             João Silva
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-end">
+                        <ul class="dropdown-menu dropdown-menu-end shadow">
                             <li><a class="dropdown-item" href="#"><i class="bi bi-person me-2"></i> Perfil</a></li>
                             <li><a class="dropdown-item" href="#"><i class="bi bi-chat-left-text me-2"></i> Mensagens</a></li>
                             <li><a class="dropdown-item" href="#"><i class="bi bi-star me-2"></i> Avaliações</a></li>
@@ -122,30 +51,10 @@
             </div>
         </div>
     </nav>
-
-    <!-- Segundo Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-white border-bottom" style="margin-top: 56px;">
-        <div class="container-fluid">
-            <div class="collapse navbar-collapse" id="secondaryNavbar">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#" id="candidatos-tab">
-                            <i class="bi bi-people me-1"></i> Candidatos
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" id="meus-trabalhos-tab">
-                            <i class="bi bi-briefcase me-1"></i> Meus Trabalhos
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
+    
     <!-- Conteúdo Principal -->
-    <div class="container-fluid mt-3">
-        <div class="row">
+    <div class="container my-4">
+        <div class="row card">
             <main class="col-12 px-md-4">
                 <!-- Candidatos -->
                 <div id="candidatos-content" class="content-section">
@@ -153,7 +62,7 @@
                         <div class="row">
                             <!-- Coluna de Filtros -->
                             <div class="col-md-3 mb-4">
-                                <div class="card shadow-sm">
+                                <div class="card h-100">
                                     <div class="card-header bg-primary text-white">
                                         <h5 class="mb-0">Filtros</h5>
                                     </div>
@@ -195,14 +104,11 @@
                                                 <i class="bi bi-chevron-down"></i>
                                             </div>
                                             <div class="filtro-opcoes">
-                                                <div class="filtro-opcao">
-                                                    <input type="checkbox" id="avaliacao-crescente">
-                                                    <label for="avaliacao-crescente">Crescente</label>
-                                                </div>
-                                                <div class="filtro-opcao">
-                                                    <input type="checkbox" id="avaliacao-decrescente">
-                                                    <label for="avaliacao-decrescente">Decrescente</label>
-                                                </div>
+                                                <select class="form-select form-select-sm" id="ordenar-avaliacao">
+                                                    <option value="">Ordenar por...</option>
+                                                    <option value="crescente">Avaliação Crescente</option>
+                                                    <option value="decrescente">Avaliação Decrescente</option>
+                                                </select>
                                             </div>
                                         </div>
                                         
@@ -213,14 +119,11 @@
                                                 <i class="bi bi-chevron-down"></i>
                                             </div>
                                             <div class="filtro-opcoes">
-                                                <div class="filtro-opcao">
-                                                    <input type="checkbox" id="valor-crescente">
-                                                    <label for="valor-crescente">Crescente</label>
-                                                </div>
-                                                <div class="filtro-opcao">
-                                                    <input type="checkbox" id="valor-decrescente">
-                                                    <label for="valor-decrescente">Decrescente</label>
-                                                </div>
+                                                <select class="form-select form-select-sm" id="ordenar-valor">
+                                                    <option value="">Ordenar por...</option>
+                                                    <option value="crescente">Valor Crescente</option>
+                                                    <option value="decrescente">Valor Decrescente</option>
+                                                </select>
                                             </div>
                                         </div>
                                     </div>
@@ -229,13 +132,26 @@
                             
                             <!-- Coluna de Perfis -->
                             <div class="col-md-9">
+                                <div class="d-flex justify-content-between align-items-center mb-4">
+                                    <h4 class="mb-0">Profissionais Disponíveis</h4>
+                                    <div class="d-flex">
+                                        <span class="badge bg-primary me-2">12 resultados</span>
+                                        <select class="form-select form-select-sm w-auto">
+                                            <option>Itens por página</option>
+                                            <option>10</option>
+                                            <option selected>20</option>
+                                            <option>50</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
                                 <div class="row row-cols-1 row-cols-md-2 g-4">
                                     <!-- Perfil 1 -->
                                     <div class="col">
-                                        <div class="card shadow-sm perfil-card h-100">
+                                        <div class="card perfil-card h-100">
                                             <div class="card-body">
                                                 <div class="d-flex align-items-center mb-3">
-                                                    <img src="https://via.placeholder.com/60" class="rounded-circle me-3" alt="Avatar">
+                                                    <img src="https://via.placeholder.com/60" class="rounded-circle me-3" alt="Juliana Alves">
                                                     <div>
                                                         <h5 class="card-title mb-0">Juliana Alves</h5>
                                                         <small class="text-muted">São Paulo - SP</small>
@@ -255,7 +171,8 @@
                                             </div>
                                             <div class="card-footer bg-white border-top">
                                                 <div class="d-flex justify-content-end gap-2">
-                                                    <button class="btn btn-sm btn-success">Contratar</button>
+                                                    <button class="btn btn-sm btn-outline-primary"><i class="bi bi-person"></i>Exibir perfil</button>
+
                                                 </div>
                                             </div>
                                         </div>
@@ -263,10 +180,10 @@
                                     
                                     <!-- Perfil 2 -->
                                     <div class="col">
-                                        <div class="card shadow-sm perfil-card h-100">
+                                        <div class="card  perfil-card h-100">
                                             <div class="card-body">
                                                 <div class="d-flex align-items-center mb-3">
-                                                    <img src="https://via.placeholder.com/60" class="rounded-circle me-3" alt="Avatar">
+                                                    <img src="https://via.placeholder.com/60" class="rounded-circle me-3" alt="Roberto Lima">
                                                     <div>
                                                         <h5 class="card-title mb-0">Roberto Lima</h5>
                                                         <small class="text-muted">Belo Horizonte - MG</small>
@@ -286,7 +203,8 @@
                                             </div>
                                             <div class="card-footer bg-white border-top">
                                                 <div class="d-flex justify-content-end gap-2">
-                                                    <button class="btn btn-sm btn-success">Contratar</button>
+                                                    <button class="btn btn-sm btn-outline-primary"><i class="bi bi-person"></i>Exibir perfil</button>
+
                                                 </div>
                                             </div>
                                         </div>
@@ -294,10 +212,10 @@
                                     
                                     <!-- Perfil 3 -->
                                     <div class="col">
-                                        <div class="card shadow-sm perfil-card h-100">
+                                        <div class="card  perfil-card h-100">
                                             <div class="card-body">
                                                 <div class="d-flex align-items-center mb-3">
-                                                    <img src="https://via.placeholder.com/60" class="rounded-circle me-3" alt="Avatar">
+                                                    <img src="https://via.placeholder.com/60" class="rounded-circle me-3" alt="Carlos Souza">
                                                     <div>
                                                         <h5 class="card-title mb-0">Carlos Souza</h5>
                                                         <small class="text-muted">Rio de Janeiro - RJ</small>
@@ -317,7 +235,8 @@
                                             </div>
                                             <div class="card-footer bg-white border-top">
                                                 <div class="d-flex justify-content-end gap-2">
-                                                    <button class="btn btn-sm btn-success">Contratar</button>
+                                                    <button class="btn btn-sm btn-outline-primary"><i class="bi bi-person"></i>Exibir perfil</button>
+
                                                 </div>
                                             </div>
                                         </div>
@@ -325,10 +244,10 @@
                                     
                                     <!-- Perfil 4 -->
                                     <div class="col">
-                                        <div class="card shadow-sm perfil-card h-100">
+                                        <div class="card  perfil-card h-100">
                                             <div class="card-body">
                                                 <div class="d-flex align-items-center mb-3">
-                                                    <img src="https://via.placeholder.com/60" class="rounded-circle me-3" alt="Avatar">
+                                                    <img src="https://via.placeholder.com/60" class="rounded-circle me-3" alt="Fernanda Costa">
                                                     <div>
                                                         <h5 class="card-title mb-0">Fernanda Costa</h5>
                                                         <small class="text-muted">Curitiba - PR</small>
@@ -348,7 +267,8 @@
                                             </div>
                                             <div class="card-footer bg-white border-top">
                                                 <div class="d-flex justify-content-end gap-2">
-                                                    <button class="btn btn-sm btn-success">Contratar</button>
+                                                    <button class="btn btn-sm btn-outline-primary"><i class="bi bi-person"></i>Exibir perfil</button>
+
                                                 </div>
                                             </div>
                                         </div>
@@ -356,10 +276,10 @@
                                     
                                     <!-- Perfil 5 -->
                                     <div class="col">
-                                        <div class="card shadow-sm perfil-card h-100">
+                                        <div class="card  perfil-card h-100">
                                             <div class="card-body">
                                                 <div class="d-flex align-items-center mb-3">
-                                                    <img src="https://via.placeholder.com/60" class="rounded-circle me-3" alt="Avatar">
+                                                    <img src="https://via.placeholder.com/60" class="rounded-circle me-3" alt="Pedro Santos">
                                                     <div>
                                                         <h5 class="card-title mb-0">Pedro Santos</h5>
                                                         <small class="text-muted">Porto Alegre - RS</small>
@@ -379,52 +299,94 @@
                                             </div>
                                             <div class="card-footer bg-white border-top">
                                                 <div class="d-flex justify-content-end gap-2">
-                                                    <button class="btn btn-sm btn-success">Contratar</button>
+                                                    <button class="btn btn-sm btn-outline-primary"><i class="bi bi-person"></i>Exibir perfil</button>
+
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                
+                                <!-- Paginação -->
+                                <nav class="mt-4">
+                                    <ul class="pagination justify-content-center">
+                                        <li class="page-item disabled">
+                                            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+                                        </li>
+                                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#">Próxima</a>
+                                        </li>
+                                    </ul>
+                                </nav>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <!-- Meus Trabalhos (mantido igual) -->
-                <div id="meus-trabalhos-content" class="content-section d-none">
-                    <!-- ... conteúdo existente ... -->
                 </div>
             </main>
         </div>
     </div>
 
+    <!-- Rodapé -->
+    <footer class="bg-dark text-white py-5 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 mb-4">
+                    <h5 class="mb-4">FASTWORK</h5>
+                    <p>Conectando profissionais qualificados a clientes que precisam de serviços rápidos e confiáveis.</p>
+                    <div class="social-icons mt-4">
+                        <a href="#" class="text-white me-3" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-white me-3" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-white me-3" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-white" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 mb-4">
+                    <h5 class="mb-4">Serviços</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Limpeza Residencial</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Limpeza Comercial</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Jardinagem</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Reparos Domésticos</a></li>
+                        <!--<li><a href="#" class="text-white text-decoration-none">Todos os serviços</a></li>-->
+                    </ul>
+                </div>
+                <div class="col-lg-3 mb-4">
+                    <h5 class="mb-4">Empresa</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Sobre nós</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Carreiras</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Blog</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Imprensa</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 mb-4">
+                    <h5 class="mb-4">Ajuda</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Central de Ajuda</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Segurança</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Termos e Privacidade</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Contato</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-0">© 2023 FASTWORK. Todos os direitos reservados.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#" class="text-white text-decoration-none me-3">Privacidade</a>
+                    <a href="#" class="text-white text-decoration-none me-3">Termos</a>
+                    <a href="#" class="text-white text-decoration-none">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            function hideAllSections() {
-                document.querySelectorAll('.content-section').forEach(el => el.classList.add('d-none'));
-            }
-
-            function setActiveTab(el) {
-                document.querySelectorAll('#secondaryNavbar .nav-link').forEach(link => link.classList.remove('active'));
-                el.classList.add('active');
-            }
-
-            document.getElementById('candidatos-tab').addEventListener('click', function (e) {
-                e.preventDefault();
-                hideAllSections();
-                document.getElementById('candidatos-content').classList.remove('d-none');
-                setActiveTab(this);
-            });
-
-            document.getElementById('meus-trabalhos-tab').addEventListener('click', function (e) {
-                e.preventDefault();
-                hideAllSections();
-                document.getElementById('meus-trabalhos-content').classList.remove('d-none');
-                setActiveTab(this);
-            });
-        });
-    </script>
 </body>
 </html>

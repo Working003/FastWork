@@ -1,4 +1,4 @@
-/* Variáveis de cores para facilitar manutenção */
+/* Variáveis de cores */
 :root {
     --primary-color: #3a56a7;
     --primary-dark: #2c4285;
@@ -6,81 +6,70 @@
     --success-color: #198754;
     --warning-color: #ffc107;
     --danger-color: #dc3545;
+    --secondary-color: #6c757d;
+    --light-color: #f8f9fa;
+    --dark-color: #212529;
 }
 
 /* Estilos gerais */
 body {
-    background-color: #f8f9fa;
-    padding-top: 5px; /* Espaço para o navbar fixo */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    line-height: 1.6;
 }
 
-/* Navbar */
+/* Navbar principal */
 .navbar {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background-color: var(--primary-color) !important;
-}
-
-.navbar-brand {
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-}
-
-.navbar-brand img {
-    margin-right: 8px;
-}
-
-.nav-link {
-    display: flex;
-    align-items: center;
-    padding: 0.5rem 1rem;
-}
-
-.nav-link i {
-    margin-right: 5px;
-}
-
-.navbar-nav .nav-item .nav-link {
-    border-radius: 4px;
-    margin: 0 2px;
-}
-
-.navbar-nav .nav-item .nav-link:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-.navbar-nav .nav-item .nav-link.active {
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
-/* Dropdown menu */
-.dropdown-menu {
-    border: none;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.dropdown-item {
-    padding: 8px 16px;
+.navbar-brand {
+    font-size: 1.5rem;
 }
 
-.dropdown-item i {
-    width: 20px;
-    text-align: center;
-    margin-right: 8px;
+/* Segundo navbar */
+.navbar-light {
+    background-color: white !important;
 }
 
-/* Cards e elementos específicos */
+/* Cards */
+.card {
+    border: none;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
 .card-header {
     background-color: var(--primary-color);
     color: white;
+    font-weight: 600;
 }
 
-.bg-primary {
-    background-color: var(--primary-color) !important;
+/* Formulários */
+.form-control, .form-select {
+    border-radius: 4px;
+    padding: 8px 12px;
 }
 
-.bg-primary-subtle {
-    background-color: var(--primary-light) !important;
+.form-label {
+    font-weight: 500;
+    color: var(--dark-color);
+}
+
+/* Botões */
+.btn {
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-weight: 500;
+    transition: all 0.2s ease;
 }
 
 .btn-primary {
@@ -93,26 +82,98 @@ body {
     border-color: var(--primary-dark);
 }
 
+.btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-success {
+    background-color: var(--success-color);
+    border-color: var(--success-color);
+}
+
+.btn-success:hover {
+    background-color: #157347;
+    border-color: #157347;
+}
+
+/* Badges */
+.badge {
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+/* Progress bar */
+.progress {
+    height: 8px;
+    border-radius: 4px;
+}
+
+/* Tabelas */
+.table {
+    margin-bottom: 0;
+}
+
+.table th {
+    font-weight: 600;
+    color: var(--primary-color);
+    border-top: none;
+}
+
 .table-hover tbody tr:hover {
-    background-color: rgba(58, 86, 167, 0.1);
+    background-color: rgba(58, 86, 167, 0.05);
 }
 
-.badge.bg-primary {
-    background-color: var(--primary-color) !important;
+/* Abas */
+.nav-tabs {
+    border-bottom: 2px solid #dee2e6;
 }
 
-/* Cards de status */
-.card.text-white.bg-success {
-    background-color: var(--success-color) !important;
+.nav-tabs .nav-link {
+    border: none;
+    color: var(--secondary-color);
+    font-weight: 500;
+    padding: 12px 20px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
 }
 
-.card.text-white.bg-warning {
-    background-color: var(--warning-color) !important;
+.nav-tabs .nav-link:hover {
+    color: var(--primary-color);
+    background-color: rgba(58, 86, 167, 0.05);
 }
 
-/* Listas e itens */
-.list-group-item-action:hover {
-    background-color: var(--primary-light);
+.nav-tabs .nav-link.active {
+    color: var(--primary-color);
+    background-color: transparent;
+    border-bottom: 3px solid var(--primary-color);
+    font-weight: 600;
+}
+
+/* Modal */
+.modal-header {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Rodapé */
+footer {
+    background-color: var(--dark-color);
+}
+
+footer a {
+    transition: color 0.2s;
+}
+
+footer a:hover {
+    color: white !important;
 }
 
 /* Ícones */
@@ -121,24 +182,27 @@ body {
 }
 
 /* Responsividade */
-@media (max-width: 992px) {
+@media (max-width: 768px) {
     .navbar-collapse {
         padding-top: 10px;
-    }
-    
-    .navbar-nav {
-        margin-top: 10px;
     }
     
     .nav-link {
         padding: 8px 0;
     }
+    
+    .card {
+        margin-bottom: 20px;
+    }
 }
 
-/* Melhorias para tabelas */
-.table-responsive {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+/* Seções de conteúdo */
+.content-section {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    margin-bottom: 30px;
 }
 
 /* Espaçamentos consistentes */
@@ -146,12 +210,11 @@ body {
     margin-bottom: 1.5rem !important;
 }
 
-.card {
-    border: none;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s;
-}
-
-.card:hover {
-    transform: translateY(-2px);
+/* Imagens */
+.img-thumbnail {
+    padding: 4px;
+    background-color: white;
+    border: 1px solid #dee2e6;
+    border-radius: 50%;
+    max-width: 150px;
 }

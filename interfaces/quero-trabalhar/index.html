@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-secondary-subtle">
+<body class="bg-light">
     <!-- Navbar Principal -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">
                 <i class="bi bi-briefcase-fill fs-3 text-white me-2"></i>
                 FASTWORK
             </a>
@@ -21,11 +21,6 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="../dashboard/index.html">
-                            <i class="bi bi-speedometer2 me-1"></i> Dashboard
-                        </a>
-                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../quero-contratar/index.html">
                             <i class="bi bi-briefcase me-1"></i> Quero Contratar
@@ -39,11 +34,11 @@
                 </ul>
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
                             <img src="https://via.placeholder.com/30x30" alt="User" class="rounded-circle me-1">
                             João Silva
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-end">
+                        <ul class="dropdown-menu dropdown-menu-end shadow">
                             <li><a class="dropdown-item" href="#"><i class="bi bi-person me-2"></i> Perfil</a></li>
                             <li><a class="dropdown-item" href="#"><i class="bi bi-chat-left-text me-2"></i> Mensagens</a></li>
                             <li><a class="dropdown-item" href="#"><i class="bi bi-star me-2"></i> Avaliações</a></li>
@@ -58,18 +53,13 @@
     </nav>
 
     <!-- Segundo Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-white border-bottom" style="margin-top: 56px;">
-        <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top" style="margin-top: 56px;">
+        <div class="container">
             <div class="collapse navbar-collapse" id="secondaryNavbar">
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link active" href="#" id="perfil-tab">
                             <i class="bi bi-person-badge me-1"></i> Meu Perfil de Trabalho
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" id="disponiveis-tab">
-                            <i class="bi bi-briefcase me-1"></i> Trabalhos Disponíveis
                         </a>
                     </li>
                     <li class="nav-item">
@@ -82,25 +72,30 @@
         </div>
     </nav>
 
-    <!-- Main Content -->
-    <div class="container-fluid mt-3">
+    <!-- Conteúdo Principal -->
+    <div class="container my-4">
         <div class="row">
             <main class="col-12 px-md-4">
                 <!-- Conteúdo Dinâmico -->
                 <div id="perfil-content" class="content-section">
                     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                         <h1 class="h2">Meu perfil de trabalho</h1>
+                        <button class="btn btn-outline-primary">
+                            <i class="bi bi-eye-fill me-1"></i> Visualizar como cliente
+                        </button>
                     </div>
-                    <!-- Da para usar
+
                     <div class="card shadow-sm mb-4">
                         <div class="card-header bg-primary text-white">
                             <h5 class="mb-0">Informações Pessoais</h5>
                         </div>
-                        <div class="card-body">    Usar dps
+                        <div class="card-body">
                             <div class="row">
                                 <div class="col-md-3 text-center">
                                     <img src="https://via.placeholder.com/150x150" alt="Foto de Perfil" class="rounded-circle mb-3 img-thumbnail">
-                                    <button class="btn btn-sm btn-outline-primary w-100">Alterar Foto</button>
+                                    <button class="btn btn-sm btn-outline-primary w-100">
+                                        <i class="bi bi-camera me-1"></i> Alterar Foto
+                                    </button>
                                 </div>
                                 <div class="col-md-9">
                                     <form>
@@ -139,12 +134,16 @@
                                                 </select>
                                             </div>
                                         </div>
-                                        <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+                                        <div class="d-flex justify-content-end">
+                                            <button type="submit" class="btn btn-primary">
+                                                <i class="bi bi-save me-1"></i> Salvar Alterações
+                                            </button>
+                                        </div>
                                     </form>
                                 </div>
                             </div>
                         </div> 
-                    </div>-->
+                    </div>
                     
                     <div class="card shadow-sm mb-4">
                         <div class="card-header bg-primary text-white">
@@ -171,7 +170,6 @@
                                             <option>Não</option>
                                         </select>
                                     </div>
-
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Descrição do seu trabalho</label>
@@ -180,157 +178,59 @@
                                 <div class="mb-3">
                                     <label class="form-label">Habilidades</label>
                                     <input type="text" class="form-control" value="Limpeza profunda, Organização, Produtos de limpeza">
+                                    <small class="text-muted">Separe as habilidades por vírgulas</small>
                                 </div>
-                                <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+                                <div class="mb-3">
+                                    <label class="form-label">Valor por hora (R$)</label>
+                                    <input type="number" class="form-control" value="80">
+                                </div>
+                                <div class="d-flex justify-content-end">
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="bi bi-save me-1"></i> Salvar Alterações
+                                    </button>
+                                </div>
                             </form>
                         </div>
                     </div>
                 </div>
-
-                <div id="disponiveis-content" class="content-section d-none">
-                    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                        <h1 class="h2">Trabalhos Disponíveis</h1>
-                        <div class="btn-toolbar mb-2 mb-md-0">
-                            <div class="input-group">
-                                <input type="text" class="form-control form-control-sm" placeholder="Buscar trabalhos...">
-                                <button class="btn btn-sm btn-outline-secondary" type="button">
-                                    <i class="bi bi-search"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row row-cols-1 row-cols-md-2 g-4">
-                        <!-- Trabalho 1 -->
-                        <div class="col">
-                            <div class="card h-100 shadow-sm">
-                                <div class="card-header bg-primary text-white">
-                                    <h5 class="mb-0">Limpeza Residencial</h5>
-                                </div>
-                                <div class="card-body">
-                                    <ul class="list-group list-group-flush mb-3">
-                                        <li class="list-group-item">
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <div>
-                                                    <strong>Cliente:</strong>
-                                                </div>
-                                                <div class="d-flex align-items-center">
-                                                    <img src="https://via.placeholder.com/40x40" alt="Avatar" class="rounded-circle me-3">
-                                                    <div>
-                                                        <h6 class="mb-0">Maria Oliveira</h6>
-                                                        <small class="text-muted">São Paulo - SP</small>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="list-group-item"><strong>Valor:</strong> R$ 120,00</li>
-                                        <li class="list-group-item"><strong>Prazo:</strong> 15/06/2023</li>
-                                        <li class="list-group-item"><strong>Descrição:</strong> Limpeza completa de apartamento de 60m² no bairro Jardins.</li>
-                                    </ul>
-                                </div>
-                                <div class="card-footer bg-primary-subtle">
-                                    <div class="d-flex justify-content-between">
-                                        <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#detailsModal">
-                                            <i class="bi bi-eye me-1"></i> Detalhes
-                                        </button>
-                                        <button class="btn btn-sm btn-success">
-                                            <i class="bi bi-check-circle me-1"></i> Candidatar-se
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Trabalho 2 -->
-                        <div class="col">
-                            <div class="card h-100 shadow-sm">
-                                <div class="card-header bg-primary text-white">
-                                    <h5 class="mb-0">Organização de Evento</h5>
-                                </div>
-                                <div class="card-body">
-                                    <div class="mb-3">
-                                        <h6 class="text-muted">Cliente</h6>
-                                        <div class="d-flex align-items-center">
-                                            <img src="https://via.placeholder.com/40x40" alt="Avatar" class="rounded-circle me-3">
-                                            <div>
-                                                <h6 class="mb-0">Carlos Souza</h6>
-                                                <small class="text-muted">Rio de Janeiro - RJ</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row mb-3">
-                                        <div class="col-6">
-                                            <h6 class="text-muted">Valor</h6>
-                                            <p>R$ 250,00</p>
-                                        </div>
-                                        <div class="col-6">
-                                            <h6 class="text-muted">Prazo</h6>
-                                            <p>20/06/2023</p>
-                                        </div>
-                                    </div>
-                                    <div class="mb-3">
-                                        <h6 class="text-muted">Descrição</h6>
-                                        <p>Ajuda na organização de evento corporativo para 50 pessoas, incluindo montagem de mesas, decoração e apoio geral.</p>
-                                    </div>
-                                </div>
-                                <div class="card-footer bg-primary-subtle">
-                                    <div class="d-flex justify-content-between">
-                                        <button class="btn btn-sm btn-primary">
-                                            <i class="bi bi-eye me-1"></i> Detalhes
-                                        </button>
-                                        <button class="btn btn-sm btn-success">
-                                            <i class="bi bi-check-circle me-1"></i> Candidatar-se
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+                
+                <!-- Meus Trabalhos -->
                 <div id="meus-trabalhos-content" class="content-section d-none">
-                    <!-- Conteúdo de Meus Trabalhos (copiado do arquivo original) -->
                     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                         <h1 class="h2">Meus Trabalhos</h1>
                         <div class="btn-toolbar mb-2 mb-md-0">
                             <div class="btn-group me-2">
-                                <button type="button" class="btn btn-sm btn-outline-secondary">Filtrar</button>
-                                <button type="button" class="btn btn-sm btn-outline-secondary">Ordenar</button>
-                            </div>
-                            <div class="input-group">
-                                <input type="text" class="form-control form-control-sm" placeholder="Buscar trabalhos...">
-                                <button class="btn btn-sm btn-outline-secondary" type="button">
-                                    <i class="bi bi-search"></i>
+                                <button type="button" class="btn btn-sm btn-outline-secondary">
+                                    <i class="bi bi-download me-1"></i> Exportar
                                 </button>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Abas de status -->
+                    <!-- Abas com ícones -->
                     <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
                         <li class="nav-item" role="presentation">
                             <button class="nav-link" id="completed-tab" data-bs-toggle="tab" data-bs-target="#completed" type="button" role="tab">
-                                Concluídos <span class="badge bg-success ms-1">5</span>
+                                <i class="bi bi-check-circle text-success me-1"></i> Concluídos <span class="badge bg-success ms-1">5</span>
                             </button>
                         </li>
                         <li class="nav-item" role="presentation">
                             <button class="nav-link active" id="active-tab" data-bs-toggle="tab" data-bs-target="#active" type="button" role="tab">
-                                Em Andamento <span class="badge bg-primary ms-1">2</span>
+                                <i class="bi bi-play-circle text-primary me-1"></i> Em Andamento <span class="badge bg-primary ms-1">2</span>
                             </button>
                         </li>
                         <li class="nav-item" role="presentation">
                             <button class="nav-link" id="pending-tab" data-bs-toggle="tab" data-bs-target="#pending" type="button" role="tab">
-                                Pendentes <span class="badge bg-warning ms-1">1</span>
+                                <i class="bi bi-hourglass-split text-warning me-1"></i> Pendentes <span class="badge bg-warning ms-1">1</span>
                             </button>
                         </li>
                     </ul>
 
-                    <!-- Conteúdo das abas -->
                     <div class="tab-content" id="myTabContent">
-                        <!-- Tab Em Andamento -->
+                        <!-- Em Andamento -->
                         <div class="tab-pane fade show active" id="active" role="tabpanel">
                             <div class="row row-cols-1 row-cols-md-2 g-4">
-                                <!-- Trabalho 1 -->
+                                <!-- Exemplo de trabalho em andamento -->
                                 <div class="col">
                                     <div class="card h-100 shadow-sm">
                                         <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
@@ -338,88 +238,55 @@
                                             <span class="badge bg-light text-dark">Em Andamento</span>
                                         </div>
                                         <div class="card-body">
-                                            <ul class="list-group list-group-flush mb-3">
-                                                <!-- Item do Cliente (alinhado com os demais) -->
-                                                <li class="list-group-item">
-                                                    <div class="d-flex justify-content-between align-items-center">
-                                                        <div>
-                                                            <strong>Cliente:</strong>
-                                                        </div>
-                                                        <div class="d-flex align-items-center">
-                                                            <img src="https://via.placeholder.com/40x40" alt="Avatar" class="rounded-circle me-3">
-                                                            <div>
-                                                                <h6 class="mb-0">Maria Oliveira</h6>
-                                                                <small class="text-muted">São Paulo - SP</small>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <!-- Demais itens -->
-                                                <li class="list-group-item"><strong>Valor:</strong> R$ 120,00</li>
-                                                <li class="list-group-item"><strong>Prazo:</strong> 15/06/2023</li>
-                                            </ul>
+                                            <p><strong>Cliente:</strong> Maria Oliveira</p>
+                                            <p><strong>Valor:</strong> R$ 120,00</p>
+                                            <p><strong>Prazo:</strong> 15/06/2023</p>
+                                            <div class="progress mt-3">
+                                                <div class="progress-bar bg-success" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                            <small class="text-muted">30% concluído</small>
                                         </div>
                                         <div class="card-footer bg-primary-subtle">
-                                            <div class="d-flex justify-content-between">
-                                                <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#detailsModal">
-                                                    <i class="bi bi-eye me-1"></i> Detalhes
-                                                </button>
-                                                <button class="btn btn-sm btn-success">
-                                                    <i class="bi bi-check-circle me-1"></i> Finalizar
-                                                </button>
-                                            </div>
+                                            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#detailsModal">
+                                                <i class="bi bi-eye me-1"></i> Detalhes
+                                            </button>
+                                            <button class="btn btn-sm btn-success" onclick="return confirm('Deseja finalizar este trabalho?')">
+                                                <i class="bi bi-check-circle me-1"></i> Finalizar
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
-
-                                <!-- Trabalho 2 -->
+                                
+                                <!-- Segundo trabalho em andamento -->
                                 <div class="col">
                                     <div class="card h-100 shadow-sm">
                                         <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
-                                            <h5 class="mb-0">Organização de Evento</h5>
+                                            <h5 class="mb-0">Pintura de Parede</h5>
                                             <span class="badge bg-light text-dark">Em Andamento</span>
                                         </div>
                                         <div class="card-body">
-                                            <div class="mb-3">
-                                                <h6 class="text-muted">Cliente</h6>
-                                                <div class="d-flex align-items-center">
-                                                    <img src="https://via.placeholder.com/40x40" alt="Avatar" class="rounded-circle me-3">
-                                                    <div>
-                                                        <h6 class="mb-0">Carlos Souza</h6>
-                                                        <small class="text-muted">Rio de Janeiro - RJ</small>
-                                                    </div>
-                                                </div>
+                                            <p><strong>Cliente:</strong> José Carlos</p>
+                                            <p><strong>Valor:</strong> R$ 350,00</p>
+                                            <p><strong>Prazo:</strong> 20/06/2023</p>
+                                            <div class="progress mt-3">
+                                                <div class="progress-bar bg-success" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
                                             </div>
-                                            <div class="row mb-3">
-                                                <div class="col-6">
-                                                    <h6 class="text-muted">Valor</h6>
-                                                    <p>R$ 250,00</p>
-                                                </div>
-                                                <div class="col-6">
-                                                    <h6 class="text-muted">Prazo</h6>
-                                                    <p>20/06/2023</p>
-                                                </div>
-                                            </div>
-                                            <div class="progress mb-3">
-                                                <div class="progress-bar bg-success" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
+                                            <small class="text-muted">65% concluído</small>
                                         </div>
                                         <div class="card-footer bg-primary-subtle">
-                                            <div class="d-flex justify-content-between">
-                                                <button class="btn btn-sm btn-primary">
-                                                    <i class="bi bi-eye me-1"></i> Detalhes
-                                                </button>
-                                                <button class="btn btn-sm btn-success">
-                                                    <i class="bi bi-check-circle me-1"></i> Finalizar
-                                                </button>
-                                            </div>
+                                            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#detailsModal">
+                                                <i class="bi bi-eye me-1"></i> Detalhes
+                                            </button>
+                                            <button class="btn btn-sm btn-success" onclick="return confirm('Deseja finalizar este trabalho?')">
+                                                <i class="bi bi-check-circle me-1"></i> Finalizar
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Tab Concluídos -->
+                        <!-- Concluídos -->
                         <div class="tab-pane fade" id="completed" role="tabpanel">
                             <div class="table-responsive">
                                 <table class="table table-hover align-middle">
@@ -435,69 +302,61 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>Jardinagem Básica</td>
-                                            <td>
-                                                <div class="d-flex align-items-center">
-                                                    <img src="https://via.placeholder.com/40x40" alt="Avatar" class="rounded-circle me-2" width="30">
-                                                    Ana Santos
-                                                </div>
-                                            </td>
+                                            <td>Jardinagem</td>
+                                            <td>Ana Santos</td>
                                             <td>R$ 180,00</td>
                                             <td>10/06/2023</td>
+                                            <td>⭐⭐⭐⭐⭐</td>
                                             <td>
-                                                <div class="rating-stars">
-                                                    <i class="bi bi-star-fill"></i>
-                                                    <i class="bi bi-star-fill"></i>
-                                                    <i class="bi bi-star-fill"></i>
-                                                    <i class="bi bi-star-fill"></i>
-                                                    <i class="bi bi-star-half"></i>
-                                                    <span class="ms-1">4.5</span>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <button class="btn btn-sm btn-primary">
-                                                    <i class="bi bi-eye"></i> Ver
-                                                </button>
+                                                <button class="btn btn-sm btn-outline-primary"><i class="bi bi-eye"></i></button>
+                                                <button class="btn btn-sm btn-outline-secondary"><i class="bi bi-chat-left-text"></i></button>
                                             </td>
                                         </tr>
-                                        <!-- Mais linhas de trabalhos concluídos... -->
+                                        <tr>
+                                            <td>Reparo Elétrico</td>
+                                            <td>Carlos Mendes</td>
+                                            <td>R$ 220,00</td>
+                                            <td>08/06/2023</td>
+                                            <td>⭐⭐⭐⭐☆</td>
+                                            <td>
+                                                <button class="btn btn-sm btn-outline-primary"><i class="bi bi-eye"></i></button>
+                                                <button class="btn btn-sm btn-outline-secondary"><i class="bi bi-chat-left-text"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Limpeza Pós-Obra</td>
+                                            <td>Fernanda Lima</td>
+                                            <td>R$ 280,00</td>
+                                            <td>05/06/2023</td>
+                                            <td>⭐⭐⭐⭐☆</td>
+                                            <td>
+                                                <button class="btn btn-sm btn-outline-primary"><i class="bi bi-eye"></i></button>
+                                                <button class="btn btn-sm btn-outline-secondary"><i class="bi bi-chat-left-text"></i></button>
+                                            </td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
                         </div>
 
-                        <!-- Tab Pendentes -->
+                        <!-- Pendentes -->
                         <div class="tab-pane fade" id="pending" role="tabpanel">
-                            <div class="card">
+                            <div class="card shadow-sm mb-3">
+                                <div class="card-header bg-warning text-white">
+                                    <h5 class="mb-0">Serviço de Mudança</h5>
+                                </div>
                                 <div class="card-body">
-                                    <div class="d-flex justify-content-between align-items-center mb-3">
-                                        <div>
-                                            <h5 class="mb-0">Serviço de Mudança</h5>
-                                            <small class="text-muted">Aguardando confirmação do cliente</small>
-                                        </div>
-                                        <span class="badge bg-warning">Pendente</span>
-                                    </div>
-                                    <div class="d-flex justify-content-between">
-                                        <div>
-                                            <h6 class="text-muted">Cliente</h6>
-                                            <p>Roberto Almeida</p>
-                                        </div>
-                                        <div>
-                                            <h6 class="text-muted">Valor Proposto</h6>
-                                            <p>R$ 200,00</p>
-                                        </div>
-                                        <div>
-                                            <h6 class="text-muted">Data Prevista</h6>
-                                            <p>22/06/2023</p>
-                                        </div>
-                                    </div>
+                                    <p><strong>Cliente:</strong> Roberto Almeida</p>
+                                    <p><strong>Valor:</strong> R$ 200,00</p>
+                                    <p><strong>Data:</strong> 22/06/2023</p>
+                                    <p><strong>Descrição:</strong> Mudança de apartamento com 2 quartos</p>
+                                    <span class="badge bg-warning text-dark">Pendente</span>
                                 </div>
                                 <div class="card-footer bg-primary-subtle">
-                                    <button class="btn btn-sm btn-outline-secondary me-2">
-                                        <i class="bi bi-pencil"></i> Editar Proposta
-                                    </button>
-                                    <button class="btn btn-sm btn-outline-danger">
-                                        <i class="bi bi-x-circle"></i> Cancelar
+                                    <button class="btn btn-sm btn-primary"><i class="bi bi-check-circle me-1"></i> Aceitar</button>
+                                    <button class="btn btn-sm btn-outline-secondary"><i class="bi bi-pencil me-1"></i> Editar</button>
+                                    <button class="btn btn-sm btn-outline-danger" onclick="return confirm('Deseja cancelar este trabalho?')">
+                                        <i class="bi bi-x-circle me-1"></i> Cancelar
                                     </button>
                                 </div>
                             </div>
@@ -508,7 +367,7 @@
         </div>
     </div>
 
-    <!-- Modal de Detalhes (copiado do arquivo original) -->
+    <!-- Modal de Detalhes -->
     <div class="modal fade" id="detailsModal" tabindex="-1" aria-labelledby="detailsModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -594,31 +453,87 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                    <button type="button" class="btn btn-primary">Enviar Atualização</button>
+                    <button type="button" class="btn btn-primary">
+                        <i class="bi bi-send me-1"></i> Enviar Atualização
+                    </button>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Rodapé -->
+    <footer class="bg-dark text-white py-5 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 mb-4">
+                    <h5 class="mb-4">FASTWORK</h5>
+                    <p>Conectando profissionais qualificados a clientes que precisam de serviços rápidos e confiáveis.</p>
+                    <div class="social-icons mt-4">
+                        <a href="#" class="text-white me-3" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-white me-3" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-white me-3" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-white" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 mb-4">
+                    <h5 class="mb-4">Serviços</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Limpeza Residencial</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Limpeza Comercial</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Jardinagem</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Reparos Domésticos</a></li>
+                        <!--<li><a href="#" class="text-white text-decoration-none">Todos os serviços</a></li>-->
+                    </ul>
+                </div>
+                <div class="col-lg-3 mb-4">
+                    <h5 class="mb-4">Empresa</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Sobre nós</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Carreiras</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Blog</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Imprensa</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 mb-4">
+                    <h5 class="mb-4">Ajuda</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Central de Ajuda</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Segurança</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Termos e Privacidade</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Contato</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-0">© 2023 FASTWORK. Todos os direitos reservados.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#" class="text-white text-decoration-none me-3">Privacidade</a>
+                    <a href="#" class="text-white text-decoration-none me-3">Termos</a>
+                    <a href="#" class="text-white text-decoration-none">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Script para alternar entre as seções
-        document.addEventListener('DOMContentLoaded', function() {
-            // Mostrar a seção Meus Trabalhos por padrão
-            document.getElementById('perfil-content').classList.remove('d-none');
-            
-            // Adicionar eventos aos links do segundo navbar
+        document.addEventListener('DOMContentLoaded', function () {
+            function hideAllSections() {
+                document.querySelectorAll('.content-section').forEach(el => el.classList.add('d-none'));
+            }
+
+            function setActiveTab(el) {
+                document.querySelectorAll('#secondaryNavbar .nav-link').forEach(link => link.classList.remove('active'));
+                el.classList.add('active');
+            }
+
             document.getElementById('perfil-tab').addEventListener('click', function(e) {
                 e.preventDefault();
                 hideAllSections();
                 document.getElementById('perfil-content').classList.remove('d-none');
-                setActiveTab(this);
-            });
-            
-            document.getElementById('disponiveis-tab').addEventListener('click', function(e) {
-                e.preventDefault();
-                hideAllSections();
-                document.getElementById('disponiveis-content').classList.remove('d-none');
                 setActiveTab(this);
             });
             
@@ -628,19 +543,6 @@
                 document.getElementById('meus-trabalhos-content').classList.remove('d-none');
                 setActiveTab(this);
             });
-            
-            function hideAllSections() {
-                document.querySelectorAll('.content-section').forEach(section => {
-                    section.classList.add('d-none');
-                });
-            }
-            
-            function setActiveTab(activeElement) {
-                document.querySelectorAll('#secondaryNavbar .nav-link').forEach(tab => {
-                    tab.classList.remove('active');
-                });
-                activeElement.classList.add('active');
-            }
         });
     </script>
 </body>

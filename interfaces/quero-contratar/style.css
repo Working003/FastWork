@@ -1,4 +1,4 @@
-/* Variáveis de cores para facilitar manutenção */
+/* Variáveis de cores */
 :root {
     --primary-color: #3a56a7;
     --primary-dark: #2c4285;
@@ -6,152 +6,207 @@
     --success-color: #198754;
     --warning-color: #ffc107;
     --danger-color: #dc3545;
+    --secondary-color: #6c757d;
+    --light-color: #f8f9fa;
+    --dark-color: #212529;
 }
 
 /* Estilos gerais */
 body {
-    background-color: #f8f9fa;
-    padding-top: 5px; /* Espaço para o navbar fixo */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    line-height: 1.6;
+    padding-top: 20px; /* Para compensar o navbar fixo */
 }
 
-/* Navbar */
+/* Navbar principal */
 .navbar {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background-color: var(--primary-color) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+    height: 50px; /* Altura personalizada */
+    min-height: 50px; /* Garante que não fique menor que isso */
 }
 
 .navbar-brand {
-    font-weight: bold;
-    display: flex;
-    align-items: center;
+    font-size: 1.5rem;
 }
 
-.navbar-brand img {
-    margin-right: 8px;
-}
-
-.nav-link {
-    display: flex;
-    align-items: center;
-    padding: 0.5rem 1rem;
-}
-
-.nav-link i {
-    margin-right: 5px;
-}
-
-.navbar-nav .nav-item .nav-link {
-    border-radius: 4px;
-    margin: 0 2px;
-}
-
-.navbar-nav .nav-item .nav-link:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-.navbar-nav .nav-item .nav-link.active {
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
-/* Dropdown menu */
-.dropdown-menu {
+/* Cards de perfil */
+.perfil-card {
+    transition: all 0.3s ease;
     border: none;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
 }
 
-.dropdown-item {
-    padding: 8px 16px;
+.perfil-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
-.dropdown-item i {
-    width: 20px;
-    text-align: center;
-    margin-right: 8px;
+.perfil-avaliacao {
+    color: var(--warning-color);
+    font-size: 1.1rem;
 }
 
-/* Cards e elementos específicos */
+.perfil-valor {
+    font-weight: bold;
+    color: var(--success-color);
+    font-size: 1.1rem;
+}
+
+/* Filtros */
+.filtro-grupo {
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 1rem;
+}
+
+.filtro-grupo:last-child {
+    border-bottom: none;
+}
+
+.filtro-titulo {
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.2s ease;
+}
+
+.filtro-titulo:hover {
+    background-color: rgba(58, 86, 167, 0.1);
+}
+
+.filtro-opcoes {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding-left: 1rem;
+}
+
+.filtro-grupo:hover .filtro-opcoes {
+    max-height: 500px;
+}
+
+.filtro-opcao {
+    margin: 0.5rem 0;
+    display: flex;
+    align-items: center;
+}
+
+.filtro-opcao label {
+    margin-left: 0.5rem;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.filtro-opcao label:hover {
+    color: var(--primary-color);
+}
+
+/* Card de filtros */
+.card {
+    border: none;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
 .card-header {
+    font-weight: 600;
     background-color: var(--primary-color);
     color: white;
 }
 
-.bg-primary {
-    background-color: var(--primary-color) !important;
+/* Botões */
+.btn-success {
+    background-color: var(--success-color);
+    border-color: var(--success-color);
 }
 
-.bg-primary-subtle {
-    background-color: var(--primary-light) !important;
+.btn-success:hover {
+    background-color: #157347;
+    border-color: #157347;
 }
 
-.btn-primary {
+.btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Badges */
+.badge {
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+/* Paginação */
+.pagination .page-item.active .page-link {
     background-color: var(--primary-color);
     border-color: var(--primary-color);
 }
 
-.btn-primary:hover {
-    background-color: var(--primary-dark);
-    border-color: var(--primary-dark);
+.pagination .page-link {
+    color: var(--primary-color);
 }
 
-.table-hover tbody tr:hover {
-    background-color: rgba(58, 86, 167, 0.1);
+.pagination .page-link:hover {
+    color: var(--primary-dark);
 }
 
-.badge.bg-primary {
-    background-color: var(--primary-color) !important;
+/* Rodapé */
+footer {
+    background-color: var(--dark-color);
 }
 
-/* Cards de status */
-.card.text-white.bg-success {
-    background-color: var(--success-color) !important;
+footer a {
+    transition: color 0.2s;
 }
 
-.card.text-white.bg-warning {
-    background-color: var(--warning-color) !important;
-}
-
-/* Listas e itens */
-.list-group-item-action:hover {
-    background-color: var(--primary-light);
-}
-
-/* Ícones */
-.bi {
-    font-size: 1.2rem;
+footer a:hover {
+    color: white !important;
 }
 
 /* Responsividade */
-@media (max-width: 992px) {
+@media (max-width: 768px) {
     .navbar-collapse {
         padding-top: 10px;
-    }
-    
-    .navbar-nav {
-        margin-top: 10px;
     }
     
     .nav-link {
         padding: 8px 0;
     }
+    
+    .filtro-opcoes {
+        padding-left: 0;
+    }
+    
+    .perfil-card {
+        margin-bottom: 20px;
+    }
 }
 
-/* Melhorias para tabelas */
-.table-responsive {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+/* Ajustes para o conteúdo principal */
+.container {
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
-/* Espaçamentos consistentes */
-.mb-4 {
-    margin-bottom: 1.5rem !important;
-}
-
-.card {
-    border: none;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s;
-}
-
-.card:hover {
-    transform: translateY(-2px);
+.content-section {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    padding: 25px;
+    margin-bottom: 30px;
 }
