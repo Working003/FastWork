@@ -6,7 +6,7 @@
     <title>FASTWORK - Quero Trabalhar</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../quero-contratar/style.css">
 </head>
 <body class="bg-light">
     <!-- Navbar Principal -->
@@ -69,7 +69,7 @@
                                     <div class="card-body">
                                         <!-- Filtro de Funções -->
                                         <div class="filtro-grupo">
-                                            <div class="filtro-titulo">
+                                            <div class="filtro-titulo" onclick="toggleFiltro(this)">
                                                 <span>Funções</span>
                                                 <i class="bi bi-chevron-down"></i>
                                             </div>
@@ -97,33 +97,28 @@
                                             </div>
                                         </div>
                                         
-                                        <!-- Filtro de Avaliação -->
+                                        <!-- Filtro -->
                                         <div class="filtro-grupo">
-                                            <div class="filtro-titulo">
-                                                <span>Avaliação</span>
+                                            <div class="filtro-titulo" onclick="toggleFiltro(this)">
+                                                <span>Ordenar por</span>
                                                 <i class="bi bi-chevron-down"></i>
                                             </div>
                                             <div class="filtro-opcoes">
-                                                <select class="form-select form-select-sm" id="ordenar-avaliacao">
-                                                    <option value="">Ordenar por...</option>
-                                                    <option value="crescente">Avaliação Crescente</option>
-                                                    <option value="decrescente">Avaliação Decrescente</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        
-                                        <!-- Filtro de Valor -->
-                                        <div class="filtro-grupo">
-                                            <div class="filtro-titulo">
-                                                <span>Valor</span>
-                                                <i class="bi bi-chevron-down"></i>
-                                            </div>
-                                            <div class="filtro-opcoes">
-                                                <select class="form-select form-select-sm" id="ordenar-valor">
-                                                    <option value="">Ordenar por...</option>
-                                                    <option value="crescente">Valor Crescente</option>
-                                                    <option value="decrescente">Valor Decrescente</option>
-                                                </select>
+                                                <div class="mb-2">
+                                                    <label for="ordenar-campo" class="form-label small">Critério</label>
+                                                    <select class="form-select form-select-sm" id="ordenar-campo">
+                                                        <option value="">Selecione um critério</option>
+                                                        <option value="valor">Valor</option>
+                                                        <option value="avaliacao">Avaliação</option>
+                                                    </select>
+                                                </div>
+                                                <div>
+                                                    <label for="ordenar-direcao" class="form-label small">Ordem</label>
+                                                    <select class="form-select form-select-sm" id="ordenar-direcao">
+                                                        <option value="asc">Crescente (A-Z, Menor-Maior)</option>
+                                                        <option value="desc">Decrescente (Z-A, Maior-Menor)</option>
+                                                    </select>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -136,19 +131,13 @@
                                     <h4 class="mb-0">Profissionais Disponíveis</h4>
                                     <div class="d-flex">
                                         <span class="badge bg-primary me-2">12 resultados</span>
-                                        <select class="form-select form-select-sm w-auto">
-                                            <option>Itens por página</option>
-                                            <option>10</option>
-                                            <option selected>20</option>
-                                            <option>50</option>
-                                        </select>
                                     </div>
                                 </div>
                                 
                                 <div class="row row-cols-1 row-cols-md-2 g-4">
                                     <!-- Perfil 1 -->
                                     <div class="col">
-                                        <div class="card perfil-card h-100">
+                                        <div class="perfil-card h-100">
                                             <div class="card-body">
                                                 <div class="d-flex align-items-center mb-3">
                                                     <img src="https://via.placeholder.com/60" class="rounded-circle me-3" alt="Juliana Alves">
@@ -170,135 +159,7 @@
                                                 </div>
                                             </div>
                                             <div class="card-footer bg-white border-top">
-                                                <div class="d-flex justify-content-end gap-2">
-                                                    <button class="btn btn-sm btn-outline-primary"><i class="bi bi-person"></i>Exibir perfil</button>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <!-- Perfil 2 -->
-                                    <div class="col">
-                                        <div class="card  perfil-card h-100">
-                                            <div class="card-body">
-                                                <div class="d-flex align-items-center mb-3">
-                                                    <img src="https://via.placeholder.com/60" class="rounded-circle me-3" alt="Roberto Lima">
-                                                    <div>
-                                                        <h5 class="card-title mb-0">Roberto Lima</h5>
-                                                        <small class="text-muted">Belo Horizonte - MG</small>
-                                                        <span class="badge bg-success mt-1">Jardinagem</span>
-                                                    </div>
-                                                </div>
-                                                <p class="card-text mb-2"><strong>Experiência:</strong> 5 anos em paisagismo</p>
-                                                <p class="card-text mb-2"><strong>Habilidades:</strong> Poda, adubação, irrigação</p>
-                                                <div class="d-flex justify-content-between align-items-center mt-3">
-                                                    <div>
-                                                        <p class="perfil-avaliacao mb-0">⭐⭐⭐⭐⭐ (4.8)</p>
-                                                    </div>
-                                                    <div>
-                                                        <p class="perfil-valor mb-0">R$ 150/hora</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="card-footer bg-white border-top">
-                                                <div class="d-flex justify-content-end gap-2">
-                                                    <button class="btn btn-sm btn-outline-primary"><i class="bi bi-person"></i>Exibir perfil</button>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <!-- Perfil 3 -->
-                                    <div class="col">
-                                        <div class="card  perfil-card h-100">
-                                            <div class="card-body">
-                                                <div class="d-flex align-items-center mb-3">
-                                                    <img src="https://via.placeholder.com/60" class="rounded-circle me-3" alt="Carlos Souza">
-                                                    <div>
-                                                        <h5 class="card-title mb-0">Carlos Souza</h5>
-                                                        <small class="text-muted">Rio de Janeiro - RJ</small>
-                                                        <span class="badge bg-warning mt-1">Eletricidade</span>
-                                                    </div>
-                                                </div>
-                                                <p class="card-text mb-2"><strong>Experiência:</strong> 8 anos em instalações elétricas</p>
-                                                <p class="card-text mb-2"><strong>Habilidades:</strong> Quadros de força, manutenção</p>
-                                                <div class="d-flex justify-content-between align-items-center mt-3">
-                                                    <div>
-                                                        <p class="perfil-avaliacao mb-0">⭐⭐⭐⭐☆ (4.3)</p>
-                                                    </div>
-                                                    <div>
-                                                        <p class="perfil-valor mb-0">R$ 180/hora</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="card-footer bg-white border-top">
-                                                <div class="d-flex justify-content-end gap-2">
-                                                    <button class="btn btn-sm btn-outline-primary"><i class="bi bi-person"></i>Exibir perfil</button>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <!-- Perfil 4 -->
-                                    <div class="col">
-                                        <div class="card  perfil-card h-100">
-                                            <div class="card-body">
-                                                <div class="d-flex align-items-center mb-3">
-                                                    <img src="https://via.placeholder.com/60" class="rounded-circle me-3" alt="Fernanda Costa">
-                                                    <div>
-                                                        <h5 class="card-title mb-0">Fernanda Costa</h5>
-                                                        <small class="text-muted">Curitiba - PR</small>
-                                                        <span class="badge bg-info mt-1">Encanamento</span>
-                                                    </div>
-                                                </div>
-                                                <p class="card-text mb-2"><strong>Experiência:</strong> 6 anos em hidráulica</p>
-                                                <p class="card-text mb-2"><strong>Habilidades:</strong> Reparos, instalações, vazamentos</p>
-                                                <div class="d-flex justify-content-between align-items-center mt-3">
-                                                    <div>
-                                                        <p class="perfil-avaliacao mb-0">⭐⭐⭐⭐☆ (4.5)</p>
-                                                    </div>
-                                                    <div>
-                                                        <p class="perfil-valor mb-0">R$ 160/hora</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="card-footer bg-white border-top">
-                                                <div class="d-flex justify-content-end gap-2">
-                                                    <button class="btn btn-sm btn-outline-primary"><i class="bi bi-person"></i>Exibir perfil</button>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <!-- Perfil 5 -->
-                                    <div class="col">
-                                        <div class="card  perfil-card h-100">
-                                            <div class="card-body">
-                                                <div class="d-flex align-items-center mb-3">
-                                                    <img src="https://via.placeholder.com/60" class="rounded-circle me-3" alt="Pedro Santos">
-                                                    <div>
-                                                        <h5 class="card-title mb-0">Pedro Santos</h5>
-                                                        <small class="text-muted">Porto Alegre - RS</small>
-                                                        <span class="badge bg-secondary mt-1">Construção</span>
-                                                    </div>
-                                                </div>
-                                                <p class="card-text mb-2"><strong>Experiência:</strong> 10 anos em alvenaria</p>
-                                                <p class="card-text mb-2"><strong>Habilidades:</strong> Alvenaria, reboco, acabamento</p>
-                                                <div class="d-flex justify-content-between align-items-center mt-3">
-                                                    <div>
-                                                        <p class="perfil-avaliacao mb-0">⭐⭐⭐☆☆ (3.8)</p>
-                                                    </div>
-                                                    <div>
-                                                        <p class="perfil-valor mb-0">R$ 200/hora</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="card-footer bg-white border-top">
-                                                <div class="d-flex justify-content-end gap-2">
+                                                <div class="d-flex justify-content-end mt-3">
                                                     <button class="btn btn-sm btn-outline-primary"><i class="bi bi-person"></i>Exibir perfil</button>
 
                                                 </div>
@@ -306,7 +167,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                
                                 <!-- Paginação -->
                                 <nav class="mt-4">
                                     <ul class="pagination justify-content-center">
@@ -388,5 +248,20 @@
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function toggleFiltro(elemento) {
+            const grupo = elemento.closest('.filtro-grupo');
+            grupo.classList.toggle('ativo');
+            
+            const icone = elemento.querySelector('i');
+            if (grupo.classList.contains('ativo')) {
+                icone.classList.remove('bi-chevron-down');
+                icone.classList.add('bi-chevron-up');
+            } else {
+                icone.classList.remove('bi-chevron-up');
+                icone.classList.add('bi-chevron-down');
+            }
+        }
+    </script>
 </body>
 </html>

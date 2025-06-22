@@ -1,6 +1,5 @@
 /* Variáveis de cores para facilitar manutenção */
 :root {
-    --primary-color: #3a56a7;
     --primary-dark: #2c4285;
     --primary-light: #e2eafc;
     --success-color: #198754;
@@ -17,7 +16,6 @@ body {
 /* Navbar */
 .navbar {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background-color: var(--primary-color) !important;
 }
 
 .navbar-brand {
@@ -71,12 +69,7 @@ body {
 
 /* Cards e elementos específicos */
 .card-header {
-    background-color: var(--primary-color);
     color: white;
-}
-
-.bg-primary {
-    background-color: var(--primary-color) !important;
 }
 
 .bg-primary-subtle {
@@ -84,27 +77,15 @@ body {
 }
 
 .btn-primary {
-    background-color: var(--primary-color);
-    border-color: var(--primary-color);
+    transition: all 0.2s ease;
 }
 
 .btn-primary:hover {
-    background-color: var(--primary-dark);
-    border-color: var(--primary-dark);
-}
-
-.btn-outline-primary {
-    color: var(--primary-color);
-    border-color: var(--primary-color);
-    transition: all 0.2s ease;
+    transform: translateY(-2px);
 }
 
 .table-hover tbody tr:hover {
     background-color: rgba(58, 86, 167, 0.1);
-}
-
-.badge.bg-primary {
-    background-color: var(--primary-color) !important;
 }
 
 /* Cards de status */

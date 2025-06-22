@@ -1,7 +1,0 @@
-fastapi[standard]
-uvicorn[standard]
-jinja2
-Babel
-python-multipart
-passlib[bcrypt]
-itsdangerous

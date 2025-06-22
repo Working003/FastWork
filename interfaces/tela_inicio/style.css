@@ -1,6 +1,5 @@
 /* Variáveis de cores para facilitar manutenção */
 :root {
-    --primary-color: #3a56a7;
     --primary-dark: #2c4285;
     --primary-light: #e2eafc;
     --success-color: #198754;
@@ -17,7 +16,6 @@ body {
 /* Navbar */
 .navbar {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background-color: var(--primary-color) !important;
 }
 
 .navbar-brand {
@@ -71,21 +69,11 @@ body {
 
 /* Cards e elementos específicos */
 .card-header {
-    background-color: var(--primary-color);
     color: white;
-}
-
-.bg-primary {
-    background-color: var(--primary-color) !important;
 }
 
 .bg-primary-subtle {
     background-color: var(--primary-light) !important;
-}
-
-.btn-primary {
-    background-color: var(--primary-color);
-    border-color: var(--primary-color);
 }
 
 .btn-primary:hover {
@@ -95,10 +83,6 @@ body {
 
 .table-hover tbody tr:hover {
     background-color: rgba(58, 86, 167, 0.1);
-}
-
-.badge.bg-primary {
-    background-color: var(--primary-color) !important;
 }
 
 /* Cards de status */
@@ -116,8 +100,12 @@ body {
 }
 
 /* Ícones */
-.bi {
-    font-size: 1.2rem;
+.custom-icon {
+    font-size: 100px; /* Tamanho grande */
+    /*color: var();  Cor do tema primary */
+    background-color: white; /* Fundo branco */
+    padding: 0.5rem; /* Espaçamento interno */
+    border-radius: 0.375rem; /* Cantos levemente arredondados */
 }
 
 /* Responsividade */

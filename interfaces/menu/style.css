@@ -2,13 +2,14 @@
 /* VARIÁVEIS E ESTILOS GERAIS */
 /* ==================== */
 :root {
-    --primary-color: #3a56a7;
     --primary-dark: #2c4285;
     --primary-light: #e2eafc;
-    --primary-light-bg: #f0f5ff;
     --success-color: #198754;
     --warning-color: #ffc107;
     --danger-color: #dc3545;
+    --secondary-color: #6c757d;
+    --light-color: #f8f9fa;
+    --dark-color: #212529;
 }
 
 body {
@@ -23,7 +24,6 @@ body {
 /* ==================== */
 .navbar {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background-color: var(--primary-color) !important;
 }
 
 .navbar-brand {
@@ -31,10 +31,6 @@ body {
     display: flex;
     align-items: center;
     font-size: 1.25rem;
-}
-
-.navbar-brand img {
-    margin-right: 8px;
 }
 
 .nav-link {
@@ -68,10 +64,6 @@ body {
     padding: 6rem 0;
     background-color: var(--primary-light);
     margin-bottom: 3rem;
-}
-
-.hero-section h1 {
-    color: var(--primary-dark);
 }
 
 .hero-section {
@@ -152,7 +144,6 @@ body {
 
 .service-icon {
     font-size: 2.5rem;
-    color: var(--primary-color);
 }
 
 /* ==================== */
@@ -162,7 +153,6 @@ body {
     display: inline-block;
     width: 40px;
     height: 40px;
-    background-color: var(--primary-color);
     color: white;
     border-radius: 50%;
     line-height: 40px;
@@ -237,26 +227,18 @@ footer {
 /* BOTÕES */
 /* ==================== */
 .btn-primary {
-    background-color: var(--primary-color);
-    border-color: var(--primary-color);
     transition: all 0.2s ease;
 }
 
 .btn-primary:hover {
-    background-color: var(--primary-dark);
-    border-color: var(--primary-dark);
     transform: translateY(-2px);
 }
 
 .btn-outline-primary {
-    color: var(--primary-color);
-    border-color: var(--primary-color);
     transition: all 0.2s ease;
 }
 
 .btn-outline-primary:hover {
-    background-color: var(--primary-color);
-    border-color: var(--primary-color);
     transform: translateY(-2px);
 }
 

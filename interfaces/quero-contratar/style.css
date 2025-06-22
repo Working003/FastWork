@@ -5,116 +5,54 @@
     --primary-light: #e2eafc;
     --success-color: #198754;
     --warning-color: #ffc107;
-    --danger-color: #dc3545;
-    --secondary-color: #6c757d;
-    --light-color: #f8f9fa;
     --dark-color: #212529;
 }
 
 /* Estilos gerais */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--light-color);
-    color: var(--dark-color);
-    line-height: 1.6;
-    padding-top: 20px; /* Para compensar o navbar fixo */
+    background-color: #f8f9fa;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 25.6px; /* 1.6rem */
+    min-height: 100vh;
+    padding-top: 40px;
 }
 
 /* Navbar principal */
 .navbar {
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
-    height: 50px; /* Altura personalizada */
-    min-height: 50px; /* Garante que não fique menor que isso */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 80px;
 }
 
 .navbar-brand {
-    font-size: 1.5rem;
-}
-
-/* Cards de perfil */
-.perfil-card {
-    transition: all 0.3s ease;
-    border: none;
-    border-radius: 10px;
-    overflow: hidden;
-    margin-bottom: 20px;
-}
-
-.perfil-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-}
-
-.perfil-avaliacao {
-    color: var(--warning-color);
-    font-size: 1.1rem;
-}
-
-.perfil-valor {
     font-weight: bold;
-    color: var(--success-color);
-    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    font-size: 20px; /* 1.25rem */
 }
 
-/* Filtros */
-.filtro-grupo {
-    margin-bottom: 1.5rem;
-    border-bottom: 1px solid #dee2e6;
-    padding-bottom: 1rem;
+.nav-link {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px; /* 0.5rem 1rem */
 }
 
-.filtro-grupo:last-child {
-    border-bottom: none;
+.nav-link i {
+    margin-right: 5px;
 }
 
-.filtro-titulo {
-    font-weight: 600;
-    cursor: pointer;
-    padding: 0.5rem;
+.navbar-nav .nav-item .nav-link {
     border-radius: 4px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: all 0.2s ease;
+    margin: 0 2px;
+    transition: background-color 0.2s ease;
 }
 
-.filtro-titulo:hover {
-    background-color: rgba(58, 86, 167, 0.1);
-}
+/*Cards*/
 
-.filtro-opcoes {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-    padding-left: 1rem;
-}
-
-.filtro-grupo:hover .filtro-opcoes {
-    max-height: 500px;
-}
-
-.filtro-opcao {
-    margin: 0.5rem 0;
-    display: flex;
-    align-items: center;
-}
-
-.filtro-opcao label {
-    margin-left: 0.5rem;
-    cursor: pointer;
-    transition: color 0.2s;
-}
-
-.filtro-opcao label:hover {
-    color: var(--primary-color);
-}
-
-/* Card de filtros */
 .card {
-    border: none;
-    border-radius: 8px;
+    border: 2px solid rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .card-header {
@@ -123,59 +61,66 @@ body {
     color: white;
 }
 
-/* Botões */
-.btn-success {
-    background-color: var(--success-color);
-    border-color: var(--success-color);
+/* Cards de perfil */
+.perfil-card {
+    transition: all 0.3s ease;
+    border: 2px solid rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    margin-bottom: 20px;
 }
 
-.btn-success:hover {
-    background-color: #157347;
-    border-color: #157347;
+.perfil-avaliacao {
+    color: var(--warning-color);
+    font-size: 17.6px; /* 1.1rem */
 }
 
-.btn-outline-primary {
+.perfil-valor {
+    font-weight: bold;
+    color: var(--success-color);
+    font-size: 17.6px; /* 1.1rem */
+}
+
+/* Filtros */
+.filtro-grupo {
+    background-color: white;
+    border-radius: 8px;
+    padding: 12px; /* 0.75rem */
+    margin-bottom: 16px; /* 1rem */
+    transition: all 0.3s ease;
+}
+
+.filtro-titulo {
+    font-weight: 600;
     color: var(--primary-color);
-    border-color: var(--primary-color);
+    padding: 8px 12px; /* 0.5rem 0.75rem */
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.2s ease;
 }
 
-.btn-outline-primary:hover {
-    background-color: var(--primary-color);
-    color: white;
+.filtro-opcoes {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease, margin 0.3s ease;
+    padding: 0 12px;
+    margin-top: 0;
 }
 
-/* Badges */
-.badge {
-    font-weight: 500;
-    padding: 5px 10px;
-    border-radius: 4px;
-}
-
-/* Paginação */
-.pagination .page-item.active .page-link {
-    background-color: var(--primary-color);
-    border-color: var(--primary-color);
-}
-
-.pagination .page-link {
-    color: var(--primary-color);
-}
-
-.pagination .page-link:hover {
-    color: var(--primary-dark);
+.filtro-grupo.ativo .filtro-opcoes {
+    max-height: 500px;
+    padding: 12px;
+    margin-top: 8px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 /* Rodapé */
-footer {
-    background-color: var(--dark-color);
-}
-
 footer a {
     transition: color 0.2s;
-}
-
-footer a:hover {
-    color: white !important;
 }
 
 /* Responsividade */
@@ -190,10 +135,6 @@ footer a:hover {
     
     .filtro-opcoes {
         padding-left: 0;
-    }
-    
-    .perfil-card {
-        margin-bottom: 20px;
     }
 }
 
@@ -210,68 +151,3 @@ footer a:hover {
     padding: 25px;
     margin-bottom: 30px;
 }
-
-/* Estilos adicionais para os filtros */
-        .filtro-grupo {
-            margin-bottom: 1.5rem;
-            border-bottom: 1px solid #dee2e6;
-            padding-bottom: 1rem;
-        }
-        
-        .filtro-grupo:last-child {
-            border-bottom: none;
-        }
-        
-        .filtro-titulo {
-            font-weight: 600;
-            cursor: pointer;
-            padding: 0.5rem;
-            border-radius: 4px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .filtro-titulo:hover {
-            background-color: rgba(58, 86, 167, 0.1);
-        }
-        
-        .filtro-opcoes {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-            padding-left: 1rem;
-        }
-        
-        .filtro-grupo:hover .filtro-opcoes {
-            max-height: 500px;
-        }
-        
-        .filtro-opcao {
-            margin: 0.5rem 0;
-            display: flex;
-            align-items: center;
-        }
-        
-        .filtro-opcao label {
-            margin-left: 0.5rem;
-            cursor: pointer;
-        }
-        
-        .perfil-card {
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        
-        .perfil-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-        
-        .perfil-avaliacao {
-            color: #ffc107;
-        }
-        
-        .perfil-valor {
-            font-weight: bold;
-            color: #198754;
-        }

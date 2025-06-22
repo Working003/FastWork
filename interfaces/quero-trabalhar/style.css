@@ -5,69 +5,99 @@
     --primary-light: #e2eafc;
     --success-color: #198754;
     --warning-color: #ffc107;
-    --danger-color: #dc3545;
-    --secondary-color: #6c757d;
-    --light-color: #f8f9fa;
     --dark-color: #212529;
 }
 
 /* Estilos gerais */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--light-color);
-    color: var(--dark-color);
+    background-color: #f8f9fa;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     line-height: 1.6;
+    min-height: 100vh;
+    padding-top: 50px;
 }
 
 /* Navbar principal */
 .navbar {
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 80px;
 }
 
 .navbar-brand {
-    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    font-size: 1.25rem;
 }
 
-/* Segundo navbar */
-.navbar-light {
-    background-color: white !important;
+.nav-link {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+}
+
+.nav-link i {
+    margin-right: 5px;
+}
+
+.navbar-nav .nav-item .nav-link {
+    border-radius: 4px;
+    margin: 0 2px;
+    transition: background-color 0.2s ease;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.navbar-nav .nav-item .nav-link.active {
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 /* Cards */
 .card {
-    border: none;
-    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
     overflow: hidden;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .card-header {
+    font-weight: 600;
     background-color: var(--primary-color);
     color: white;
-    font-weight: 600;
+    padding: 1rem 1.25rem;
+}
+
+.card-body {
+    padding: 1.25rem;
 }
 
 /* Formulários */
 .form-control, .form-select {
-    border-radius: 4px;
-    padding: 8px 12px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(58, 86, 167, 0.25);
 }
 
 .form-label {
     font-weight: 500;
-    color: var(--dark-color);
+    margin-bottom: 0.5rem;
 }
 
 /* Botões */
 .btn {
-    border-radius: 4px;
-    padding: 8px 16px;
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
     font-weight: 500;
     transition: all 0.2s ease;
 }
@@ -88,79 +118,20 @@ body {
 }
 
 .btn-outline-primary:hover {
-    background-color: var(--primary-color);
     color: white;
-}
-
-.btn-success {
-    background-color: var(--success-color);
-    border-color: var(--success-color);
-}
-
-.btn-success:hover {
-    background-color: #157347;
-    border-color: #157347;
-}
-
-/* Badges */
-.badge {
-    font-weight: 500;
-    padding: 5px 10px;
-    border-radius: 4px;
-}
-
-/* Progress bar */
-.progress {
-    height: 8px;
-    border-radius: 4px;
-}
-
-/* Tabelas */
-.table {
-    margin-bottom: 0;
-}
-
-.table th {
-    font-weight: 600;
-    color: var(--primary-color);
-    border-top: none;
-}
-
-.table-hover tbody tr:hover {
-    background-color: rgba(58, 86, 167, 0.05);
-}
-
-/* Abas */
-.nav-tabs {
-    border-bottom: 2px solid #dee2e6;
-}
-
-.nav-tabs .nav-link {
-    border: none;
-    color: var(--secondary-color);
-    font-weight: 500;
-    padding: 12px 20px;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-}
-
-.nav-tabs .nav-link:hover {
-    color: var(--primary-color);
-    background-color: rgba(58, 86, 167, 0.05);
-}
-
-.nav-tabs .nav-link.active {
-    color: var(--primary-color);
-    background-color: transparent;
-    border-bottom: 3px solid var(--primary-color);
-    font-weight: 600;
-}
-
-/* Modal */
-.modal-header {
     background-color: var(--primary-color);
-    color: white;
+}
+
+.hover-effect:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Imagens */
+.img-thumbnail {
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    padding: 0.25rem;
+    border-radius: 10px;
 }
 
 /* Rodapé */
@@ -176,45 +147,56 @@ footer a:hover {
     color: white !important;
 }
 
-/* Ícones */
-.bi {
-    font-size: 1.2rem;
-}
-
 /* Responsividade */
 @media (max-width: 768px) {
     .navbar-collapse {
-        padding-top: 10px;
+        padding-top: 0.625rem;
     }
     
     .nav-link {
-        padding: 8px 0;
+        padding: 0.5rem 0;
     }
     
-    .card {
-        margin-bottom: 20px;
+    .card-body {
+        padding: 1rem;
     }
 }
 
-/* Seções de conteúdo */
+/* Ajustes para o conteúdo principal */
+.container {
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+}
+
 .content-section {
     background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    padding: 20px;
-    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    padding: 1.5625rem;
+    margin-bottom: 1.875rem;
 }
 
-/* Espaçamentos consistentes */
-.mb-4 {
-    margin-bottom: 1.5rem !important;
+.border-bottom {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
 }
 
-/* Imagens */
-.img-thumbnail {
-    padding: 4px;
-    background-color: white;
-    border: 1px solid #dee2e6;
-    border-radius: 50%;
-    max-width: 150px;
+/* Espaçamento consistente para formulários */
+.form-spacing .row {
+    margin-bottom: 1.25rem;
+}
+
+.form-spacing .mb-3 {
+    margin-bottom: 1rem !important;
+}
+
+/* Estilo para a seção de cabeçalho */
+.d-flex.justify-content-between.flex-wrap {
+    padding: 1rem 0;
+    margin-bottom: 1.5rem;
+}
+
+/* Efeitos de hover consistentes */
+.perfil-card {
+    transition: all 0.3s ease;
+    margin-bottom: 1.25rem;
 }
