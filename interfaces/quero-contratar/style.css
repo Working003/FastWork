@@ -53,6 +53,14 @@ body {
 .navbar-nav .nav-item .nav-link.active {
     background-color: rgba(255, 255, 255, 0.2);
 }
+
+.navbar .dropdown-toggle img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
 /*Cards*/
 
 .card {
@@ -157,4 +165,56 @@ footer a {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     padding: 25px;
     margin-bottom: 30px;
+}
+
+/* Novo estilo para os filtros superiores */
+#candidatos-content .card-body.py-2 {
+    padding: 0.75rem 1rem !important;
+}
+
+#candidatos-content .btn-sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    border-radius: 0.375rem;
+    transition: all 0.2s ease;
+}
+
+#candidatos-content .btn-outline-primary.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+#candidatos-content .btn-outline-primary:not(.active):hover {
+    background-color: var(--primary-light);
+}
+
+/* Estilo para o dropdown de ordenação */
+#candidatos-content .dropdown-toggle::after {
+    margin-left: 0.5em;
+    vertical-align: 0.15em;
+}
+
+#candidatos-content .dropdown-menu {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+/* Ajustes de responsividade */
+@media (max-width: 768px) {
+    #candidatos-content .d-flex.flex-wrap {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    #candidatos-content .d-flex.gap-2 {
+        margin-top: 0.5rem;
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 0.5rem;
+    }
+    
+    #candidatos-content .btn-sm {
+        white-space: nowrap;
+    }
 }

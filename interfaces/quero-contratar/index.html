@@ -35,7 +35,7 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
-                            <img src="https://via.placeholder.com/30x30" alt="User" class="rounded-circle me-1">
+                            <img src="https://randomuser.me/api/portraits/men/42.jpg" alt="User" class="rounded-circle me-1">
                             João Silva
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end shadow">
@@ -56,83 +56,64 @@
                 <!-- Candidatos -->
                 <div id="candidatos-content" class="content-section">
                     <div class="pt-3 pb-2 mb-3">
-                        <div class="row">
-                            <!-- Coluna de Filtros -->
-                            <div class="col-md-3 mb-4">
-                                <div class="card h-100">
-                                    <div class="card-header bg-primary text-white">
-                                        <h5 class="mb-0">Filtros</h5>
-                                    </div>
-                                    <div class="card-body">
-                                        <!-- Filtro de Funções -->
-                                        <div class="filtro-grupo">
-                                            <div class="filtro-titulo" onclick="toggleFiltro(this)">
-                                                <span>Funções</span>
-                                                <i class="bi bi-chevron-down"></i>
-                                            </div>
-                                            <div class="filtro-opcoes">
-                                                <div class="filtro-opcao">
-                                                    <input type="checkbox" id="limpeza">
-                                                    <label for="limpeza">Limpeza</label>
-                                                </div>
-                                                <div class="filtro-opcao">
-                                                    <input type="checkbox" id="jardinagem">
-                                                    <label for="jardinagem">Jardinagem</label>
-                                                </div>
-                                                <div class="filtro-opcao">
-                                                    <input type="checkbox" id="eletricidade">
-                                                    <label for="eletricidade">Eletricidade</label>
-                                                </div>
-                                                <div class="filtro-opcao">
-                                                    <input type="checkbox" id="encanamento">
-                                                    <label for="encanamento">Encanamento</label>
-                                                </div>
-                                                <div class="filtro-opcao">
-                                                    <input type="checkbox" id="construcao">
-                                                    <label for="construcao">Construção</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                        <!-- Filtro -->
-                                        <div class="filtro-grupo">
-                                            <div class="filtro-titulo" onclick="toggleFiltro(this)">
-                                                <span>Ordenar por</span>
-                                                <i class="bi bi-chevron-down"></i>
-                                            </div>
-                                            <div class="filtro-opcoes">
-                                                <div class="mb-2">
-                                                    <label for="ordenar-campo" class="form-label small">Critério</label>
-                                                    <select class="form-select form-select-sm" id="ordenar-campo">
-                                                        <option value="">Selecione um critério</option>
-                                                        <option value="valor">Valor</option>
-                                                        <option value="avaliacao">Avaliação</option>
-                                                    </select>
-                                                </div>
-                                                <div>
-                                                    <label for="ordenar-direcao" class="form-label small">Ordem</label>
-                                                    <select class="form-select form-select-sm" id="ordenar-direcao">
-                                                        <option value="asc">Crescente (A-Z, Menor-Maior)</option>
-                                                        <option value="desc">Decrescente (Z-A, Maior-Menor)</option>
-                                                    </select>
-                                                </div>
+                        <!-- Filtro Superior -->
+                        <div class="row mb-4">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body py-2">
+                                        <div class="d-flex flex-wrap align-items-center">
+                                            <span class="me-3 fw-bold">Filtrar por:</span>
+                                            <div class="d-flex flex-wrap gap-2">
+                                                <!-- Filtros como botões -->
+                                                <button class="btn btn-sm btn-outline-primary active">Todos</button>
+                                                <button class="btn btn-sm btn-outline-primary">
+                                                    <i class="bi bi-broom me-1"></i> Limpeza
+                                                </button>
+                                                <button class="btn btn-sm btn-outline-primary">
+                                                    <i class="bi bi-flower1 me-1"></i> Jardinagem
+                                                </button>
+                                                <button class="btn btn-sm btn-outline-primary">
+                                                    <i class="bi bi-lightning-charge me-1"></i> Eletricidade
+                                                </button>
+                                                <button class="btn btn-sm btn-outline-primary">
+                                                    <i class="bi bi-droplet me-1"></i> Encanamento
+                                                </button>
+                                                <button class="btn btn-sm btn-outline-primary">
+                                                    <i class="bi bi-house-gear me-1"></i> Construção
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            
+                        </div>
+                        
+                        <!-- Conteúdo Principal -->
+                        <div class="row">
                             <!-- Coluna de Perfis -->
-                            <div class="col-md-9">
+                            <div class="col-12">
                                 <div class="d-flex justify-content-between align-items-center mb-4">
                                     <h4 class="mb-0">Profissionais Disponíveis</h4>
                                     <div class="d-flex">
                                         <span class="badge bg-primary me-2">12 resultados</span>
+                                        <!--<div class="dropdown">
+                                            <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" id="ordenarDropdown" data-bs-toggle="dropdown">
+                                                <i class="bi bi-sort-down"></i> Ordenar
+                                            </button>
+                                            <ul class="dropdown-menu dropdown-menu-end">
+                                                <li><h6 class="dropdown-header">Ordenar por</h6></li>
+                                                <li><a class="dropdown-item" href="#">Menor valor</a></li>
+                                                <li><a class="dropdown-item" href="#">Maior valor</a></li>
+                                                <li><hr class="dropdown-divider"></li>
+                                                <li><a class="dropdown-item" href="#">Melhor avaliação</a></li>
+                                                <li><a class="dropdown-item" href="#">Mais recentes</a></li>
+                                            </ul>
+                                        </div>-->
                                     </div>
                                 </div>
                                 
                                 <div class="row row-cols-1 row-cols-md-2 g-4">
-                                    <!-- Perfil 1 -->
+                                    <!-- Perfil 1 (mantido igual) -->
                                     <div class="col">
                                         <div class="perfil-card h-100">
                                             <div class="card-body">
@@ -150,9 +131,6 @@
                                                     <div>
                                                         <p class="perfil-avaliacao mb-0">⭐⭐⭐⭐☆ (4.2)</p>
                                                     </div>
-                                                    <div>
-                                                        <p class="perfil-valor mb-0">R$ 130/hora</p>
-                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="card-footer bg-white border-top">
@@ -165,7 +143,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- Paginação -->
+                                <!-- Paginação (mantida igual) -->
                                 <nav class="mt-4">
                                     <ul class="pagination justify-content-center">
                                         <li class="page-item disabled">
@@ -205,11 +183,10 @@
                         <div class="col-md-8">
                             <p><strong>Telefone:</strong> (11) 98765-4321</p>
                             <p><strong>E-mail:</strong> juliana.alves@email.com</p>
-                            <p><strong>Valor por hora:</strong> R$ 130</p>
-                            <p><strong>Instagram:</strong> <a href="https://instagram.com/juliana.trabalhos" target="_blank">@juliana.trabalhos</a></p>
-                            <p><strong>Facebook:</strong> <a href="https://facebook.com/juliana.alves" target="_blank">juliana.alves</a></p>
-                            <p><strong>Área de atuação:</strong> Limpeza comercial e residencial</p>
-                            <p><strong>Descrição:</strong> Profissional dedicada, com mais de 3 anos de experiência em limpeza profunda e organização. Comprometida com a pontualidade e a satisfação do cliente.</p>
+                            <!--<p><strong>Instagram:</strong> <a href="https://instagram.com/juliana.trabalhos" target="_blank">@juliana.trabalhos</a></p>
+                            <p><strong>Facebook:</strong> <a href="https://facebook.com/juliana.alves" target="_blank">juliana.alves</a></p>-->
+                            <p><strong>Área de atuação:</strong> Limpeza</p>
+                            <p><strong>Descrição:</strong> descrição da função</p>
                         </div>
                     </div>
                 </div>

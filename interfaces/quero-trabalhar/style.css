@@ -5,7 +5,9 @@
     --primary-light: #e2eafc;
     --success-color: #198754;
     --warning-color: #ffc107;
+    --danger-color: #dc3545;
     --dark-color: #212529;
+    --secondary-color: #6c757d;
 }
 
 /* Estilos gerais */
@@ -30,28 +32,82 @@ body {
     font-size: 1.25rem;
 }
 
-.nav-link {
+/* Segundo Navbar (Tabs) */
+.nav-tabs {
+    border-bottom: none;
+}
+
+.nav-tabs .nav-link {
+    border: none;
+    color: var(--secondary-color);
+    font-weight: 500;
+    padding: 1rem 1.5rem;
+    transition: all 0.2s ease;
+}
+
+.nav-tabs .nav-link:hover {
+    color: var(--primary-color);
+    background-color: rgba(58, 86, 167, 0.05);
+    border-color: transparent;
+}
+
+.nav-tabs .nav-link.active {
+    color: var(--primary-color);
+    background-color: transparent;
+    border-bottom: 3px solid var(--primary-color);
+    font-weight: 600;
+}
+
+.navbar .dropdown-toggle img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Cards de Planos */
+.plano-card {
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.plano-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.plano-recomendado {
+    border: 2px solid var(--warning-color);
+    position: relative;
+}
+
+.plano-recomendado::before {
+    content: "Recomendado";
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    background-color: var(--warning-color);
+    color: #000;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+.pricing-card-title {
+    font-size: 2.5rem;
+    margin: 15px 0;
+}
+
+/* Lista de benefícios */
+.list-unstyled li {
+    padding: 5px 0;
     display: flex;
     align-items: center;
-    padding: 0.5rem 1rem;
-}
-
-.nav-link i {
-    margin-right: 5px;
-}
-
-.navbar-nav .nav-item .nav-link {
-    border-radius: 4px;
-    margin: 0 2px;
-    transition: background-color 0.2s ease;
-}
-
-.navbar-nav .nav-item .nav-link:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-.navbar-nav .nav-item .nav-link.active {
-    background-color: rgba(255, 255, 255, 0.2);
 }
 
 /* Cards */
@@ -160,6 +216,11 @@ footer a:hover {
     .card-body {
         padding: 1rem;
     }
+    
+    .nav-tabs .nav-link {
+        padding: 0.75rem 1rem;
+        font-size: 0.9rem;
+    }
 }
 
 /* Ajustes para o conteúdo principal */
@@ -170,7 +231,7 @@ footer a:hover {
 
 .content-section {
     background-color: white;
-    border-radius: 10px;
+    border-radius: 0 0 10px 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     padding: 1.5625rem;
     margin-bottom: 1.875rem;
